@@ -1,0 +1,1 @@
+This folder contains pre-processing scripts that handle the raw data (e.g. raw observation data).

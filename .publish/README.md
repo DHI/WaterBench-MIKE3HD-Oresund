@@ -1,0 +1,1 @@
+This folder contains scripts to zip the output folder and the entire repository (without the output folder) to upload it in Zenodo. Additional scripts may be added if relevant.

@@ -1,0 +1,56 @@
+name: Render Markdown to PDF using Quarto
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - README.md
+  workflow_dispatch:
+
+jobs:
+  render-pdf:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Check for unfilled placeholders
+        id: check_placeholders
+        run: |
+          if grep -q "XX" README.md; then
+            echo "README.md still contains placeholder values (XXXX). Skipping render."
+            echo "skip=true" >> $GITHUB_OUTPUT
+          else
+            echo "skip=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Set up Quarto
+        if: steps.check_placeholders.outputs.skip == 'false'
+        uses: quarto-dev/quarto-actions/setup@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tinytex: true
+
+      - name: Render README.md to PDF
+        if: steps.check_placeholders.outputs.skip == 'false'
+        run: |
+          quarto render README.md --to pdf --output README.pdf
+
+      - name: Move PDF to .publish folder
+        if: steps.check_placeholders.outputs.skip == 'false'
+        run: |
+          mv README.pdf .publish/README.pdf
+
+      - name: Commit PDF
+        if: steps.check_placeholders.outputs.skip == 'false'
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add .publish/README.pdf
+          git commit -m "Add rendered README.pdf"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

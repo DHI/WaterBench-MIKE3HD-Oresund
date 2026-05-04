@@ -1,0 +1,1 @@
+This folder contains some figures describing the model setup and validation results.

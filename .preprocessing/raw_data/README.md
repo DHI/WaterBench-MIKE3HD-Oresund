@@ -1,0 +1,1 @@
+This folder contains the raw data that is used in the pre-processing.
