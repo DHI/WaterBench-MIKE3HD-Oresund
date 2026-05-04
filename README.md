@@ -23,8 +23,6 @@ See the [LICENSE](LICENSE) file for usage conditions.
 
 ⚠️ Disclaimer
 
-The included MIKE21 model setup is designed as a simple demonstration for educational and research purposes. It is not optimized for precision or exhaustive calibration and should not be regarded as a benchmark for best practices in hydrodynamic modeling. The results should not be used for operational or decision-making purposes.
-
 > This model setup and dataset are provided for educational,
 > benchmarking, and research purposes only.\
 > The model configuration is simplified and may not be fully calibrated
@@ -46,31 +44,24 @@ The dataset is aimed at supporting educational, research, and exploratory activi
 
 # Folder Structure
 
-> 📝 **Template Note:** The WaterBench cases should follow a folder structure that is standardized between them. If you are using a model for data creation, please stick to the following structure. If you are not using a model you might rename or remove the model and input folders.
-
-
     - README.md
     - LICENSE
-    - .github/
-        + workflows/           # GitHub Actions workflow files. This renders the README.md to PDF
-    - .publish/                # Folder for rendered outputs (e.g., README.pdf)
-    - .preprocessing/          # Notebooks for preprocessing of raw data (if applicable)
     - model/
         + model setup files
         + simulation logs 
     - input/
         + boundary conditions
         + meteorological forcing
+        + diffusivity files
+        + initial conditions
         + mesh file 
-        + parameters such as bed roughness
     - observations/
         + in-situ observations
-        + satellite data (if applicable)
+        + satellite data
     - code/
         + notebooks for data exploration
         + validation scripts
     - figures/
-        + generated plots
     - output_sample/
         + reduced model outputs for testing
     - output/
