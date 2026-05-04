@@ -4,18 +4,13 @@
 > - Don't forget to add the WaterBench to https://github.com/DHI/WaterBench so it is included in https://dhi.github.io/WaterBench/
 > - Please make sure that you specify the timezone format of your data.
 
-# WaterBench Case: \[CASE NAME\]
-
-> 📝 **Template Note:** Replace \[CASE NAME\] above with the name of this WaterBench case.
+# MIKE3 Hydrodynamic model of Øresund
 
 > 📝 **Template Note:** Replace `XXXXXXXX` with the Zenodo DOI. Use the HTML format below (not Markdown image syntax) — Pandoc skips raw HTML in PDF output, which prevents the badge from breaking LaTeX rendering.
 
 <a href="https://doi.org/10.5281/zenodo.XXXXXXXX"><img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.XXXXXXXX-blue" alt="DOI"></a>
 
-> 📝 **Template Note:** Replace \[CASE NAME\] with the name of this WaterBench case.
-
-This repository contains practical and background information for the
-WaterBench case "\[CASE NAME\]".
+This repository contains practical and background information for the WaterBench case "MIKE3 HD model of Øresund".
 
 The dataset can be cited as:
 
@@ -28,14 +23,7 @@ See the [LICENSE](LICENSE) file for usage conditions.
 
 ⚠️ Disclaimer
 
-> 📝 **Template Note:** The following disclaimer is optional. Adapt or remove it as applicable. Replace the placeholders \[\] with actual values.
-
-> This model setup is a highly simplified version of a \[hindcast\] model developed
-> by DHI. The mesh has been reduced from over \[XXXXXX\] to approximately \[XXXXXX\]
-> elements, and input data is coarser in both time and space. As a result, model
-> accuracy is lower — e.g., typical RMSE increases from \[XX\] cm to \[XX\] cm.
-
-> 📝 **Template Note:** The following disclaimer must always be included.
+The included MIKE21 model setup is designed as a simple demonstration for educational and research purposes. It is not optimized for precision or exhaustive calibration and should not be regarded as a benchmark for best practices in hydrodynamic modeling. The results should not be used for operational or decision-making purposes.
 
 > This model setup and dataset are provided for educational,
 > benchmarking, and research purposes only.\
