@@ -160,6 +160,7 @@ output.zip
 
 # input files
 /input/*dfs*
+/input/init/*dfs*
 
 # PyCharm
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
