@@ -159,7 +159,7 @@ output.zip
 /output/
 
 # input files
-/input/*.dfsu*
+/input/*dfs*
 
 # PyCharm
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
