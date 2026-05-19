@@ -1,8 +1,5 @@
-> 📝 **Template Note:** This is a template for the `output/README.md` that is uploaded to Zenodo together with the output data. Adapt all fields inside Template Notes before publishing. Remove all Template Notes.
+# WaterBench-MIKE3HD-Oresund: Output data
 
-# WaterBench Case \[CASE NAME\]: Output
-
-> 📝 **Template Note:** Replace \[CASE NAME\] above with the name of this WaterBench case.
 
 The content of this folder is cited by:
 
