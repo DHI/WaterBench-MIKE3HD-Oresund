@@ -1,23 +1,12 @@
-> 📝 **Template Note:** This is a template, please be sure to adapt it the following way before publishing the new WaterBench:
-> - All text inside Template Notes gives some indication of the content that should be included in the final README. Please adapt all of these fields and remove the Template Notes before publishing.
-> - The `output/` folder contains its own `README.md` that is uploaded to Zenodo together with the output data. This file must also be adapted before publishing.
-> - Don't forget to add the WaterBench to https://github.com/DHI/WaterBench so it is included in https://dhi.github.io/WaterBench/
-> - Please make sure that you specify the timezone format of your data.
-
 # MIKE3 Hydrodynamic model of Øresund
 
-> 📝 **Template Note:** Replace `XXXXXXXX` with the Zenodo DOI. Use the HTML format below (not Markdown image syntax) — Pandoc skips raw HTML in PDF output, which prevents the badge from breaking LaTeX rendering.
-
-<a href="https://doi.org/10.5281/zenodo.XXXXXXXX"><img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.XXXXXXXX-blue" alt="DOI"></a>
+<a href="https://doi.org/10.5281/zenodo.20284684"><img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.20284684-blue" alt="DOI"></a>
 
 This repository contains practical and background information for the WaterBench case "MIKE3 HD model of Øresund".
 
 The dataset can be cited as:
 
-> 📝 **Template Note:** Replace the citation below with the correct author, year, title, version, and DOI.
-
-> \[DHI\]. (YEAR). *\[Case Name: Short Description\]*
-> (Version X.X) \[Data set\]. Zenodo. https://doi.org/XXXX
+> DHI. (2026). Hydrodynamic 3D model of the Øresund: MIKE3 model setup, outputs and observation data [Data set]. Zenodo. [https://doi.org/10.5281/zenodo.20284684](https://doi.org/10.5281/zenodo.20284684)
 
 See the [LICENSE](LICENSE) file for usage conditions.
 
@@ -67,99 +56,45 @@ The dataset is aimed at supporting educational, research, and exploratory activi
     - output/
         + full simulation results (only on Zenodo)
 
+# Background
+This folder contains data for a simulation with the hydrodynamic MIKE 3 Flow Model FM in the Øresund Strait between Denmark and Sweden. It is an extension of a 2D setup published in 2024 ([https://doi.org/10.5281/zenodo.14160710](https://doi.org/10.5281/zenodo.14160710)). The repository contains the setup file, input data and observation data, as well as simulation result data. The simulation result data is available in Zenodo. The data supplied in this repository covers the period from 2023-01-01 to 2025-12-31. 
 
-> 📝 **Template Note:**
-> Choose the software you have used to create your data. If you did not use specific software, describe the method you followed to create the data. Example snippets for common software and methods are provided below as collapsible sections (click to expand/collapse) for clarity in the template.
->
-> For your final README:
-> - Delete all unused software or method snippets, i.e. remove everything from `<details>` to `</details>` (inclusive) for each snippet you do not use.
-> - For the snippet you keep, remove the wrapping `<details>`, `<summary>...</summary>`, and `</details>` tags so that only the `#` heading and body text remain.
-> - If your software or method is not listed, you have to create a new snippet following a similar format as the examples below.
+## MIKE 3 Flow Model FM
 
-
-<details>
-<summary><strong>MIKE 21 Flow Model FM</strong></summary>
-
-# MIKE 21 Flow Model FM
-
-MIKE 21 Flow Model FM is a modelling system based on a flexible mesh approach. The modelling system has been developed for applications within oceanographic, coastal and estuarine environments. The model is based on the numerical solution of the two-dimensional shallow water equations - the depth-integrated incompressible Reynolds averaged Navier-Stokes equations. More information can be found [in the documentation](https://manuals.mikepoweredbydhi.help/latest/Coast_and_Sea/MIKE_FM_HD_2D.pdf).
+MIKE 3 Flow Model FM is a 3D modelling system using a flexible mesh and a combination of a sigma and a Cartesian coordinate system. The modelling system has been developed for applications within oceanographic, coastal and estuarine environments. The governing equations are the incompressible Navier-Stokes equations subject to the assumptions of Boussinesq (density variations are small enough to be ignored, except in gravity term) and with the free surface described by a height function. The current model setup also includes the transport equations for temperature and salinity, which is useful e.g. for ecological modelling or modelling of sediment transport. More information can be found [in the documentation](https://manuals.mikepoweredbydhi.help/latest/Coast_and_Sea/MIKE_3_Flow_FM_Scientific_Doc.pdf).
 
 Since all data, including output from a simulation, is given, it is not necessary to run the MIKE simulation. However, it is possible, since a setup file is supplied as well as all of the input data. Running the MIKE software requires a license. Read more about obtaining a [license](https://www.dhigroup.com/technologies/mikepoweredbydhi/pricing) and about [academic licensing](https://www.dhigroup.com/technologies/mikepoweredbydhi/pricing/academic-licenses). If you already have a license, read the [step-by-step guide](https://manuals.mikepoweredbydhi.help/latest/Coast_and_Sea/MIKE_FM_HD_Step_By_Step.pdf) to learn how to run simulations.
 
-</details>
 
-<details>
-<summary><strong>MIKE 21 Spectral Wave Model</strong></summary>
+# 3D model of Øresund
 
-# MIKE 21 Spectral Wave Model
+The coastal hydrodynamics of Øresund are primarily driven by the surge component introduced at the two open boundaries (one in North and one in South) with tidal ranges of 10-20 cm. The meteorological forcings such as air pressure and wind have only a minor effect. Modelling the hydrodynamics of this area is interesting for many reasons, e.g. surveillance of bacteria in bathing water and sediments around constructions and infrastructure. 
 
-MIKE 21 SW is a modelling system based on a flexible mesh approach. The modelling system has been developed for applications within oceanographic, coastal and estuarine environments. The governing equation is the wave action balance equation formulated in either Cartesian or spherical coordinates. More information can be found [in the documentation](https://manuals.mikepoweredbydhi.help/latest/Coast_and_Sea/M21SW_Scientific_Doc.pdf).
+## Model Setup
 
-Since all data, including output from a simulation, is given, it is not necessary to run the MIKE simulation. However, it is possible, since a setup file is supplied as well as all of the input data. Running the MIKE software requires a license. Read more about obtaining a [license](https://www.dhigroup.com/technologies/mikepoweredbydhi/pricing) and about [academic licensing](https://www.dhigroup.com/technologies/mikepoweredbydhi/pricing/academic-licenses). If you already have a license, read the [user guide](https://manuals.mikepoweredbydhi.help/latest/Coast_and_Sea/MIKE21SW.pdf) to learn how to run simulations.
-</details>
+The Øresund mesh consists of triangular elements in a higher resolution close to the coast than on deeper waters, and for each node a depth value is assigned by interpolating the EMODnet bathymetry data. The mesh is shown in the figure below. It consists of a total of 3320 elements covering the area of approximately 2000 $km^2$.
 
-<details>
-<summary><strong>MIKE SHE Integrated Hydrological Model</strong></summary>
+![](figures/geometry.png)
 
-# MIKE SHE Integrated Hydrological Model
-MIKE SHE is an integrated hydrological modeling system that emerged in the 1980s to represent the physical processes of water flow through the hydrological cycle in a modular way and with relevant scale. The available process modules - evapotranspiration, overland flow, unsaturated zone flow, groundwater flow, channel flow - are each governed by their relevant partial differential equations describing the movement of water through their system. Modules can be represented with more conceptual or lumped alternatives, giving the user the ability to tailor model complexity and compute time for their application. The model also has flexibility in the spatial and temporal discretization, allowing process modules to have the grid size and time step appropriate for the modeling goals and data availability. Typical applications (among many others) for a MIKE SHE model include:
- 
-- Water resource management for a river basin
-- Flood modeling and prediction
-- Wetland restoration and management
-- Surface and groundwater interaction analyses
-- Land change effects on basin hydrology
-- Climate change effects on basin hydrology
-- Groundwater withdrawal management
-- Agriculture impact
-- Irrigation management
+### Forcings
 
-A MIKE simulation can be run using the [MIKE modeling software](https://www.dhigroup.com/technologies/mikepoweredbydhi), provided that the appropriate input data and setup files are included. Although input and setup files depend on which modules are included and what numerical engines for these models are chosen, basic inputs include:
+The model is forced by meteorological inputs and boundary conditions supplied from a larger regional model. The meteorological inputs are:
 
-- Model domain 
-- Topography (DEM)
-- Precipitation time series
+- wind velocities and air pressure,
+- air temperature and relative humidity,
+- cloud coverage, precipitation and sea-ice cover. 
 
-Detailed information on what inputs are required when different modules are added can be found in the [MIKE SHE user guide and reference manual](https://userdoc.mikeshe.mikepoweredbydhi.com/).
+The boundary conditions supply:
 
-</details>
+- vertical profile of water currents, temperature and salinity on the North and South boundary,
+- water levels on the north and south boundary.
 
-# Case Description
+The outputs from the model are given as:
 
-> 📝 **Template Note:** Answer why this specific case is part of the WaterBench series:
-> - What makes this case unique?
-> - Geographic location
-> - Type of system (river basin, estuary, urban catchment, coastal strait, etc.)
-> - Approximate spatial extent
-> - Hydrodynamic or hydrological characteristics
-> - Tidal range (if coastal)
-> - Flood characteristics
+- a 3D timeseries of the current velocities (Eastward, Northward, and vertical directions), density, temperature and salinity.
+- a 2D timeseries of the water surface elevations and depth-averaged current velocities. 
 
-# Model Setup
-
-> 📝 **Template Note:** Describe all of the following to define a complete model setup. If you are not using a model, describe your workflow for data creation and rename the section to "Workflow"
-> - Model Domain and Mesh
->   - Model extent
->   - Bathymetry
->   - Grid/mesh resolution
-> - Model Forcing
->   - Initial condition
->   - Boundary conditions
->   - River inflows
->   - Rainfall
->   - Wind / pressure
->   - Tide
->   - ...
-> - Model Parameters
->   - Bed roughness
->   - Eddy viscosity
->   - Wetting and drying threshold
->   - ...
-> - Model Outputs
->   - Variables available
->   - Spatial resolution
->   - Temporal resolution
->   - Start and end date
+The 2D timeseries contains values for each mesh element, whereas the 3D timeseries also covers the coordinates in the vertical direction. 
 
 # Validation
 
