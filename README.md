@@ -2,7 +2,7 @@
 
 <a href="https://doi.org/10.5281/zenodo.20284684"><img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.20284684-blue" alt="DOI"></a>
 
-This repository contains practical and background information for the WaterBench case "MIKE3 HD model of Øresund".
+This repository contains practical and background information for the WaterBench case.
 
 The dataset can be cited as:
 
