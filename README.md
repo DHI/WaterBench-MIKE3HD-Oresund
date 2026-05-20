@@ -108,10 +108,33 @@ The 2D timeseries contains values for each mesh element, whereas the 3D timeseri
 
 # Data Sources
 
-> 📝 **Template Note:** Describe the edits that have been made to the original data. This could, for example, include outlier analysis and imputation. 
-> In the following table adapt the columns to fit the data sources you have used. Add rows as needed.
+The following changes have been made to the data:
+
+- Sea levels in measurement stations: Data has been filtered to only include "good" or "probably good" data points according to quality flags. The coordinates of some stations have been moved into the simulation domain, since they are sometimes located so close to land (e.g. in a harbor) that the mesh is not covering it. 
+- Current velocities in measurement stations: Data has been filtered to only include "good" or "probably good" data points according to quality flags. Some faulty observations have been removed manually (e.g. zero-values and outliers). The u and v components of the current velocities are calculated from the speed and directions. The data is given at different depths, so depth-averaged values have been calculated.
+- Altimetry data: Data has been filtered to only include "good" data points according to quality flags. 
 
 | Data | Source | Citation | License |
 |------|--------|----------|--------|
-| e.g. Bathymetry  | Provider + URL | How to cite the data | License type of license link |
-| e.g. Forcing | Provider + URL |  How to cite the data | License type of license link |
+| Mesh | DHI. | Repository citation, see [the top](#MIKE3-Hydrodynamic-model-of-Øresund) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| Bathymetry | EMODnet Bathymetry Digital Terrain Model (DTM) 2020. | EMODnet Bathymetry Consortium (2020). EMODnet Digital Bathymetry (DTM 2020).EMODnet Bathymetry Consortium [https://doi.org/10.12770/bb6a87dd-e579-4036-abe1-e649cea9881a](https://doi.org/10.12770/bb6a87dd-e579-4036-abe1-e649cea9881a) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| Diffusivity input | DHI | Repository citation, see [the top](#MIKE3-Hydrodynamic-model-of-Øresund) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| Boundary condition | DHI's Danish Waters and Baltic Sea (DKBS) model. | DHI, ”Water levels and currents on the boundaries of Øresund from the DKBS hydrodynamical model” (2024). | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| Meteorological forcing | The ERA5 reanalysis of globate climate. | Hersbach, H., Bell, B., Berrisford, P., Biavati, G., Horányi, A., Muñoz Sabater, J., Nicolas, J., Peubey, C., Radu, R., Rozum, I., Schepers, D., Simmons, A., Soci, C., Dee, D., Thépaut, J-N. (2023): ERA5 hourly data on pressure levels from 1940 to present. Copernicus Climate Change Service (C3S) Climate Data Store (CDS), DOI: 10.24381/cds.bd0915c6 (Accessed on 01-05-2026) | <sub>See full license [here](https://apps.ecmwf.int/datasets/licences/copernicus/). Excerpt: "Access to Copernicus Products is given for any purpose in so far as it is lawful, whereas use may include, but is not limited to: reproduction; distribution; communication to the public; adaptation, modification and combination with other data and information; or any combination of the foregoing." <sub>|
+| Sea levels in measurement stations | [Copernicus Marine Service (CMEMS, or Copernicus Marine Environmental Monitoring Service)](https://www.copernicus.eu/en/copernicus-services/marine). Downloaded from the [Marine Data Store](https://data.marine.copernicus.eu/product/INSITU_BAL_PHYBGCWAV_DISCRETE_MYNRT_013_032/download?dataset=cmems_obs-ins_bal_phybgcwav_mynrt_na_irr_202311--ext--history). | Copernicus Marine Service, "Baltic Sea- In Situ Near Real Time Observations" (2024), [https://doi.org/10.48670/moi-00032](https://doi.org/10.48670/moi-00032). | <sub>See full license [here](https://marine.copernicus.eu/user-corner/service-commitments-and-licence). Excerpt: "The Licensee is hereby granted a worldwide, non exclusive, royalty free, perpetual licence, (subject to the terms and conditions of this agreement) to: (a) make and use such reasonable copies of Copernicus Marine Service Products for internal use and back up purposes; (b) modify, adapt, develop, create and distribute Value Added Products or Derivative Work from Copernicus Marine Service Products for any purpose; (c) redistribute, disseminate any Copernicus Marine Service Product in their original form via any media."<sub> |
+| Current velocities in measurement stations | SMHI (Meteorological and Hydrological Institute of Sweden).  | Meteorological and Hydrological Institute of Sweden, "Oceanographic observations" (2024), URL: [https://www.smhi.se/data/hitta-data-for-en-plats/ladda-ner-observationer-fran-havet/current](https://www.smhi.se/data/hitta-data-for-en-plats/ladda-ner-observationer-fran-havet/current) (accessed: 2026-05-20) | Publicly available and free to use for all purposes. [Read more](https://www.smhi.se/data/om-smhis-data/smhis-datapolicy) |
+| Temperature and salinity measurements | [Danmarks Miljøportal](https://miljoeportal.dk/) | Danmarks Miljøportal (2026), URL: [https://miljoeportal.dk/](https://miljoeportal.dk/) (Accessed: 2026-05-20) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+
+
+### Altimetry data
+
+The altimetry data is extracted from a range of different sources. The data is based on satellite observations, and the data is downloaded using [DHI's services for marine observation data](https://altimetry.dhigroup.com/). Data sources:
+
+| Satellite name    | Owner|  Link |
+| -------- | ------- | ------- |
+| Sentinel-3A (3a) | European Space Agency (ESA) |  [https://sentiwiki.copernicus.eu/web/s3-altimetry-instruments](https://sentiwiki.copernicus.eu/web/s3-altimetry-instruments) |
+| Sentinel-3B (3b) | European Space Agency (ESA) | [https://sentiwiki.copernicus.eu/web/s3-altimetry-instruments](https://sentiwiki.copernicus.eu/web/s3-altimetry-instruments) |
+| Sentinel-6A (6a) | European commission, ESA, EUMETSAT, NASA and NOAA |  [https://sentinels.copernicus.eu/web/sentinel/missions/sentinel-6/data-products](https://sentinels.copernicus.eu/web/sentinel/missions/sentinel-6/data-products) |
+| CryoSat-2 (c2) | European Space Agency (ESA) |  [https://earth.esa.int/eogateway/catalog/cryosat-products](https://earth.esa.int/eogateway/catalog/cryosat-products)  |
+| SARAL (sa) | French National Space Agency (CNES) and Indian Space Research Organisation (ISRO) | [https://podaac.jpl.nasa.gov/dataset/ALTIKA_SARAL_L2_OST_XOGDR](https://podaac.jpl.nasa.gov/dataset/ALTIKA_SARAL_L2_OST_XOGDR) |
+| Jason-3 (j3) | National Aeronautics and Space Administration (NASA) and French National Space Agency (CNES) | [https://sealevel.jpl.nasa.gov/missions/jason-3/summary/](https://sealevel.jpl.nasa.gov/missions/jason-3/summary/) |
