@@ -1,4 +1,4 @@
-// Created     : 2026-05-19 10:52:58
+// Created     : 2026-06-3 11:53:38
 // DLL         : C:\Program Files (x86)\DHI\MIKE Zero\2024\bin\x64\pfs2004.dll
 // Version     : 22.0.3.17314
 
@@ -937,7 +937,7 @@
                [SCALED_EDDY_VISCOSITY]
                   format = 2
                   sigma = 1.0
-                  file_name = |..\input\diffusivity\vdif_LONLAT_v1B_oresund.dfs3|
+                  file_name = |..\input\vdif_LONLAT_v1B_oresund.dfs3|
                   item_number = 1
                   item_name = 'Diffusivity'
                EndSect  // SCALED_EDDY_VISCOSITY
@@ -1159,7 +1159,7 @@
                type = 1
                format = 2
                constant_value = 8.0
-               file_name = |..\input\init\3D_hot_2021.dfsu|
+               file_name = |..\input\init\3D_hot.dfsu|
                item_number = 6
                item_name = 'Temperature'
                type_of_soft_start = 2
@@ -1173,7 +1173,7 @@
                type = 1
                format = 2
                constant_value = 20.0
-               file_name = |..\input\init\3D_hot_2021.dfsu|
+               file_name = |..\input\init\3D_hot.dfsu|
                item_number = 7
                item_name = 'Salinity'
                type_of_soft_start = 2
@@ -1602,7 +1602,7 @@
             Touched = 1
             include = 1
             title = '3D'
-            file_name = '../../Results_v2/2021/3D.dfsu'
+            file_name = '3D.dfsu'
             type = 2
             format = 3
             flood_and_dry = 2
@@ -1792,7 +1792,7 @@
             Touched = 1
             include = 1
             title = '2D'
-            file_name = '../../Results_v2/2021/2D.dfsu'
+            file_name = '2D.dfsu'
             type = 1
             format = 2
             flood_and_dry = 2
@@ -1982,7 +1982,7 @@
             Touched = 1
             include = 1
             title = 'WL'
-            file_name = '../../Results_v2/2021/WL.dfs0'
+            file_name = 'WL.dfs0'
             type = 1
             format = 0
             flood_and_dry = 2
@@ -2266,7 +2266,7 @@
 
          [OUTPUT_4]
             Touched = 1
-            include = 1
+            include = 0
             title = '3d_hot'
             file_name = '../../Results_v2/2021/3D_hot.dfsu'
             type = 2
@@ -2456,7 +2456,7 @@
 
          [OUTPUT_5]
             Touched = 1
-            include = 1
+            include = 0
             title = '2D_hot'
             file_name = '../../Results_v2/2021/2D_hot.dfsu'
             type = 1
