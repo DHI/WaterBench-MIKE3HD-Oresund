@@ -40,8 +40,8 @@ The dataset is aimed at supporting educational, research, and exploratory activi
         + simulation logs 
     - input/
         + boundary conditions
-        + meteorological forcing
-        + diffusivity files
+        + meteorological forcings
+        + dispersion files
         + initial conditions
         + mesh file 
     - observations/
@@ -118,7 +118,7 @@ The following changes have been made to the data:
 |------|--------|----------|--------|
 | Mesh | DHI. | Repository citation, see [the top](#MIKE3-Hydrodynamic-model-of-Øresund) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
 | Bathymetry | EMODnet Bathymetry Digital Terrain Model (DTM) 2020. | EMODnet Bathymetry Consortium (2020). EMODnet Digital Bathymetry (DTM 2020).EMODnet Bathymetry Consortium [https://doi.org/10.12770/bb6a87dd-e579-4036-abe1-e649cea9881a](https://doi.org/10.12770/bb6a87dd-e579-4036-abe1-e649cea9881a) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
-| Diffusivity input | DHI | Repository citation, see [the top](#MIKE3-Hydrodynamic-model-of-Øresund) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| Dispersion coefficients | DHI | Repository citation, see [the top](#MIKE3-Hydrodynamic-model-of-Øresund) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
 | Boundary condition | DHI's Danish Waters and Baltic Sea (DKBS) model. | DHI, ”Water levels and currents on the boundaries of Øresund from the DKBS hydrodynamical model” (2024). | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
 | Meteorological forcing | The ERA5 reanalysis of globate climate. | Hersbach, H., Bell, B., Berrisford, P., Biavati, G., Horányi, A., Muñoz Sabater, J., Nicolas, J., Peubey, C., Radu, R., Rozum, I., Schepers, D., Simmons, A., Soci, C., Dee, D., Thépaut, J-N. (2023): ERA5 hourly data on pressure levels from 1940 to present. Copernicus Climate Change Service (C3S) Climate Data Store (CDS), DOI: 10.24381/cds.bd0915c6 (Accessed on 01-05-2026) | See full license [here](https://apps.ecmwf.int/datasets/licences/copernicus/). Allowed to use and redistribute. |
 | Sea levels in measurement stations | [Copernicus Marine Service (CMEMS, or Copernicus Marine Environmental Monitoring Service)](https://www.copernicus.eu/en/copernicus-services/marine). Downloaded from the [Marine Data Store](https://data.marine.copernicus.eu/product/INSITU_BAL_PHYBGCWAV_DISCRETE_MYNRT_013_032/download?dataset=cmems_obs-ins_bal_phybgcwav_mynrt_na_irr_202311--ext--history). | Copernicus Marine Service, "Baltic Sea- In Situ Near Real Time Observations" (2024), [https://doi.org/10.48670/moi-00032](https://doi.org/10.48670/moi-00032). | See full license [here](https://marine.copernicus.eu/user-corner/service-commitments-and-licence). Allowed to use and redistribute for any purpose. |
