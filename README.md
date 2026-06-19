@@ -61,7 +61,7 @@ This folder contains data for a simulation with the hydrodynamic MIKE 3 Flow Mod
 
 ## MIKE 3 Flow Model FM
 
-MIKE 3 Flow Model FM is a 3D modelling system using a flexible mesh and a combination of a sigma and a Cartesian coordinate system. The modelling system has been developed for applications within oceanographic, coastal and estuarine environments. The governing equations are the incompressible Navier-Stokes equations subject to the assumptions of Boussinesq (density variations are small enough to be ignored, except in gravity term) and with the free surface described by a height function. The current model setup also includes the transport equations for temperature and salinity, which is useful e.g. for ecological modelling or modelling of sediment transport. More information can be found [in the documentation](https://manuals.mikepoweredbydhi.help/latest/Coast_and_Sea/MIKE_3_Flow_FM_Scientific_Doc.pdf).
+MIKE 3 Flow Model FM is a 3D modelling system using a flexible mesh to discretize the horizontal dimension and a combination of a sigma and a Cartesian coordinate system for the vertical direction. The modelling system has been developed for applications within oceanographic, coastal and estuarine environments. The governing equations are the incompressible Navier-Stokes equations subject to the assumptions of Boussinesq (density variations are small enough to be ignored, except in gravity term) and with the free surface described by a height function. The current model setup also includes the transport equations for temperature and salinity, which is useful e.g. for ecological modelling or modelling of sediment transport. More information can be found [in the documentation](https://manuals.mikepoweredbydhi.help/latest/Coast_and_Sea/MIKE_3_Flow_FM_Scientific_Doc.pdf).
 
 Since all data, including output from a simulation, is given, it is not necessary to run the MIKE simulation. However, it is possible, since a setup file is supplied as well as all of the input data. Running the MIKE software requires a license. Read more about obtaining a [license](https://www.dhigroup.com/technologies/mikepoweredbydhi/pricing) and about [academic licensing](https://www.dhigroup.com/technologies/mikepoweredbydhi/pricing/academic-licenses). If you already have a license, read the [step-by-step guide](https://manuals.mikepoweredbydhi.help/latest/Coast_and_Sea/MIKE_FM_HD_Step_By_Step.pdf) to learn how to run simulations.
 
@@ -86,7 +86,7 @@ The model is forced by meteorological inputs and boundary conditions supplied fr
 
 The boundary conditions supply:
 
-- vertical profile of water currents, temperature and salinity on the North and South boundary,
+- vertical cross section of water currents, temperature and salinity on the North and South boundary,
 - water levels on the north and south boundary.
 
 The outputs from the model are given as:
@@ -96,15 +96,25 @@ The outputs from the model are given as:
 
 The 2D timeseries contains values for each mesh element, whereas the 3D timeseries also covers the coordinates in the vertical direction. 
 
-# Validation
+# Validation of model outputs
 
-> 📝 **Template Note:** Describe the validation process for the model, including:
-> - Observation Coverage
-> - Validation approach
-> - Skill metrics used
-> - Comparison to operational model (if applicable)
->
-> Validation scripts or notebooks should be located in: `code/model_validation_*.ipynb`
+The outputs of the model are validated against in-situ measurement as well as altimetry data from satellites. The validation scripts can be found in the ./code/ folder. 
+
+## Validation of 2D outputs
+
+The leftmost figure below shows the location of the in-situ locations, and the rightmost figure shows the coverage of the altimetry data.
+
+![](figures/stations.png)
+![](figures/altimetry_coverage.png)
+
+Below, the comparison between the observational data from one such measurement station and MIKE 21 is shown. The production of these and many more plots is found in the notebooks code/model_validation_2D.ipynb.
+
+![](figures/modelskill_comparison_Dragor.png)
+
+## Validation of 3D outputs
+
+![](figures/KBH431_T_comparison.png)
+![](figures/KBH431_T_hovmoller.png)
 
 # Data Sources
 

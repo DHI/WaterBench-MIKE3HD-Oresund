@@ -1,1 +1,1 @@
-This folder contains some notebooks to explore model results.
+This folder contains some notebooks to explore and validate model results.
