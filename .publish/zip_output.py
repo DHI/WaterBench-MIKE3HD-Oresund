@@ -14,8 +14,8 @@ zip_fn = f".publish/{case_name}-output.zip"
 
 def zip_repo():
     with zipfile.ZipFile(zip_fn, "w") as z:
-        z.write(path_output + "/Area.dfsu", arcname="Area.dfsu")
-        z.write(path_output + "/Points.dfs0", arcname="Points.dfs0")
+        z.write(path_output + "/2D_2023_2025_hrly.dfsu", arcname="2D_2023_2025_hrly.dfsu")
+        z.write(path_output + "/3D_2023_2025_hrly.dfsu", arcname="3D_2023_2025_hrly.dfsu")
         z.write(path_output + "/README.md", arcname="README.md")
     print(f"Zip file created: {zip_fn}")
 
