@@ -1,4 +1,4 @@
-// Created     : 2026-06-3 11:53:38
+// Created     : 2026-06-30 16:7:24
 // DLL         : C:\Program Files (x86)\DHI\MIKE Zero\2024\bin\x64\pfs2004.dll
 // Version     : 22.0.3.17314
 
@@ -1614,7 +1614,7 @@
             use_end_time = 1
             first_time_step = 0
             last_time_step = 315636
-            time_step_frequency = 6
+            time_step_frequency = 12
             number_of_points = 1
             [POINT_1]
                name = 'Point 1'
@@ -1804,7 +1804,7 @@
             use_end_time = 1
             first_time_step = 0
             last_time_step = 315636
-            time_step_frequency = 6
+            time_step_frequency = 12
             number_of_points = 1
             [POINT_1]
                name = 'Point 1'
