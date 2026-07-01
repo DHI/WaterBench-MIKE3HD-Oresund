@@ -107,7 +107,7 @@ The coverage of the validation data is shown in the figure below. The leftmost f
 ![](figures/stations.png)
 ![](figures/altimetry_coverage.png)
 
-Below, the comparison between the observational data from one such measurement station and MIKE 21 is shown. The production of these and many more plots is found in the notebooks code/model_validation_2D.ipynb. The figure shows the predicted water surface elevations (y-axis) against the observation data (x-axis). For a perfect fit, the data would follow the 1:1 diagonal line. For this measurement station, the trend in the predictions is close to 1:1, however, the metrics in the table, e.g. unbiased root-mean-squared-error (URMSE), scatter index (SI), and $R^2$, indicate that the approximations are not perfect.
+Below, the comparison between the observational data from one such measurement station and MIKE 3 is shown. The production of these and many more plots is found in the notebooks code/model_validation_2D.ipynb. The figure shows the predicted water surface elevations (y-axis) against the observation data (x-axis). For a perfect fit, the data would follow the 1:1 diagonal line. For this measurement station, the trend in the predictions is close to 1:1, however, the metrics in the table, e.g. unbiased root-mean-squared-error (URMSE), scatter index (SI), and $R^2$, indicate that the approximations are not perfect.
 
 ![](figures/modelskill_comparison_Dragor.png)
 
@@ -125,7 +125,7 @@ The data supplied to the MIKE3 model comes from a range of sources. An overview 
 The following changes have been made to the data:
 
 - Sea levels in measurement stations: Data has been filtered to only include "good" or "probably good" data points according to quality flags. The coordinates of some stations have been moved into the simulation domain, since they are sometimes located so close to land (e.g. in a harbor) that the mesh is not covering it. 
-- Current velocities in measurement stations: Data has been filtered to only include "good" or "probably good" data points according to quality flags. Some faulty observations have been removed manually (e.g. zero-values and outliers). The u and v components of the current velocities are calculated from the speed and directions. The data is given at different depths, so depth-averaged values have been calculated.
+- Current velocities in measurement stations: Data has been filtered to only include "good" data points according to quality flags. Some faulty observations have been removed manually (e.g. zero-values and outliers). The u and v components of the current velocities are calculated from the speed and directions. The data is given at different depths, so depth-averaged values have been calculated.
 - Altimetry data: Data has been filtered to only include "good" data points according to quality flags. 
 
 | Data | Source | Citation | License |
