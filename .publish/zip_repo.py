@@ -18,7 +18,7 @@ def zip_repo():
             if (
                 not any([fn.startswith(x) for x in [".", "__", "output" + os.sep]])
                 and "__" not in fn
-                and "." in fn
+                and ("." in fn or fn == "LICENSE")
             ):
                 z.write(fn)
             else:
