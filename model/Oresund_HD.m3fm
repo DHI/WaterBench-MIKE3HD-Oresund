@@ -916,7 +916,7 @@
                [SCALED_EDDY_VISCOSITY]
                   format = 0
                   sigma = 1.0
-                  file_name = |..\input\diffusivity\hdif_LONLAT_v2.dfs3|
+                  file_name = ||
                   item_number = 1
                   item_name = 'Diffusivity'
                EndSect  // SCALED_EDDY_VISCOSITY
@@ -3966,7 +3966,7 @@
                   type = 1
                   format = 0
                   constant_closure_depth = 5
-                  file_name = |closuredepth.dfs1|
+                  file_name = ||
                   item_number = 1
                EndSect  // CLOSURE_DEPTH
 
