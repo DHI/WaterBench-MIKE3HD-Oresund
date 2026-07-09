@@ -12,8 +12,9 @@ See the [LICENSE](LICENSE) file for usage conditions.
 
 ⚠️ Disclaimer
 
-> This model is not calibrated for operational use. It is intended for educational and research purposes only, and the results \
-> must not be used for decision-making. The performance shown here does not reflect that of DHI’s high-resolution models.
+> This model is not calibrated for operational use. It is intended for educational and \
+> research purposes only, and the results must not be used for decision-making. The \
+> performance shown here does not reflect that of DHI’s high-resolution models.
 
 # Intended Use
 
