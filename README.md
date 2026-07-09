@@ -2,7 +2,7 @@
 
 <a href="https://doi.org/10.5281/zenodo.20284684"><img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.20284684-blue" alt="DOI"></a>
 
-This repository contains practical and background information for the WaterBench case.
+This dataset is part of the [DHI WaterBench](https://dhi.github.io/WaterBench/) series.
 
 The dataset can be cited as:
 
@@ -41,7 +41,7 @@ The dataset is aimed at supporting educational, research, and exploratory activi
     - input/
         + boundary conditions
         + meteorological forcings
-        + dispersion files
+        + dispersion file
         + initial conditions
         + mesh file 
     - observations/
@@ -57,7 +57,7 @@ The dataset is aimed at supporting educational, research, and exploratory activi
         + full simulation results (only on Zenodo)
 
 # Background
-This folder contains data for a simulation with the hydrodynamic MIKE 3 Flow Model FM in the Øresund Strait between Denmark and Sweden. It is an extension of a 2D setup published in 2024 ([https://doi.org/10.5281/zenodo.14160710](https://doi.org/10.5281/zenodo.14160710)). The repository contains the setup file, input data and observation data, as well as simulation result data. The simulation result data is available in Zenodo. The data supplied in this repository covers the period from 2023-01-01 to 2025-12-31. 
+This folder contains data for a simulation with the hydrodynamic MIKE 3 Flow Model FM in the Øresund Strait between Denmark and Sweden. It is an extension of a 2D setup published in 2024 ([https://doi.org/10.5281/zenodo.14160710](https://doi.org/10.5281/zenodo.14160710)). The repository contains the setup file, input data and observation data, as well as simulation result data. The simulation result data is available in [Zenodo](https://doi.org/10.5281/zenodo.20284684). The data supplied in this repository covers the period from 2023-01-01 to 2025-12-31. 
 
 ## MIKE 3 Flow Model FM
 
@@ -98,30 +98,34 @@ The 2D timeseries contains values for each mesh element, whereas the 3D timeseri
 
 # Validation of model outputs
 
-The outputs of the model are validated against in-situ measurement as well as altimetry data from satellites. The validation scripts can be found in the ./code/ folder. 
+The outputs of the model are validated against in-situ measurement as well as altimetry data from satellites. For the validation, the [modelskill](https://dhi.github.io/modelskill/) python package is used. Below, some examples of the analyses produced can be seen. The validation scripts can be found in the ./code/ folder. 
 
 ## Validation of 2D outputs
 
-The leftmost figure below shows the location of the in-situ locations, and the rightmost figure shows the coverage of the altimetry data.
+The coverage of the validation data is shown in the figure below. The leftmost figure below shows the location of the in-situ measurement locations, and the rightmost figure shows the coverage of the altimetry data.
 
 ![](figures/stations.png)
 ![](figures/altimetry_coverage.png)
 
-Below, the comparison between the observational data from one such measurement station and MIKE 21 is shown. The production of these and many more plots is found in the notebooks code/model_validation_2D.ipynb.
+Below, the comparison between the observational data from one such measurement station and MIKE 3 is shown. The production of these and many more plots is found in the notebooks code/model_validation_2D.ipynb. The figure shows the predicted water surface elevations (y-axis) against the observation data (x-axis). For a perfect fit, the data would follow the 1:1 diagonal line. For this measurement station, the trend in the predictions is close to 1:1, however, the metrics in the table, e.g. unbiased root-mean-squared-error (URMSE), scatter index (SI), and $R^2$, indicate that the approximations are not perfect.
 
 ![](figures/modelskill_comparison_Dragor.png)
 
 ## Validation of 3D outputs
+
+The 3D temperature output from MIKE is compared to observations in the figures below. The plots include a scatter plot (similar to above), an overview of the distribution through histograms and QQ_plot, and a timeseries plot. The bottom figure shows a Hovmöller diagram of the vertical profiles. The figures show that the model captures some overall trends, e.g. the bimodal distributions, but looking at the timeseries, the model is slightly out of phase. This is information that could be used to calibrate the model further. We remind the user that the current model setup has not been calibrated to full capacity, and should therefore only be used for educational, benchmarking, and research purposes, NOT operational setups.
 
 ![](figures/KBH431_T_comparison.png)
 ![](figures/KBH431_T_hovmoller.png)
 
 # Data Sources
 
+The data supplied to the MIKE3 model comes from a range of sources. An overview is found in the tables below. While this repository redistributes this data (according to the licenses), it is up to the users of the data to cite the source appropriately.
+
 The following changes have been made to the data:
 
 - Sea levels in measurement stations: Data has been filtered to only include "good" or "probably good" data points according to quality flags. The coordinates of some stations have been moved into the simulation domain, since they are sometimes located so close to land (e.g. in a harbor) that the mesh is not covering it. 
-- Current velocities in measurement stations: Data has been filtered to only include "good" or "probably good" data points according to quality flags. Some faulty observations have been removed manually (e.g. zero-values and outliers). The u and v components of the current velocities are calculated from the speed and directions. The data is given at different depths, so depth-averaged values have been calculated.
+- Current velocities in measurement stations: Data has been filtered to only include "good" data points according to quality flags. Some faulty observations have been removed manually (e.g. zero-values and outliers). The u and v components of the current velocities are calculated from the speed and directions. The data is given at different depths, so depth-averaged values have been calculated.
 - Altimetry data: Data has been filtered to only include "good" data points according to quality flags. 
 
 | Data | Source | Citation | License |
@@ -144,7 +148,6 @@ The altimetry data is extracted from a range of different sources. The data is b
 | -------- | ------- | ------- |
 | Sentinel-3A (3a) | European Space Agency (ESA) |  [https://sentiwiki.copernicus.eu/web/s3-altimetry-instruments](https://sentiwiki.copernicus.eu/web/s3-altimetry-instruments) |
 | Sentinel-3B (3b) | European Space Agency (ESA) | [https://sentiwiki.copernicus.eu/web/s3-altimetry-instruments](https://sentiwiki.copernicus.eu/web/s3-altimetry-instruments) |
-| Sentinel-6A (6a) | European commission, ESA, EUMETSAT, NASA and NOAA |  [https://sentinels.copernicus.eu/web/sentinel/missions/sentinel-6/data-products](https://sentinels.copernicus.eu/web/sentinel/missions/sentinel-6/data-products) |
 | CryoSat-2 (c2) | European Space Agency (ESA) |  [https://earth.esa.int/eogateway/catalog/cryosat-products](https://earth.esa.int/eogateway/catalog/cryosat-products)  |
 | SARAL (sa) | French National Space Agency (CNES) and Indian Space Research Organisation (ISRO) | [https://podaac.jpl.nasa.gov/dataset/ALTIKA_SARAL_L2_OST_XOGDR](https://podaac.jpl.nasa.gov/dataset/ALTIKA_SARAL_L2_OST_XOGDR) |
 | Jason-3 (j3) | National Aeronautics and Space Administration (NASA) and French National Space Agency (CNES) | [https://sealevel.jpl.nasa.gov/missions/jason-3/summary/](https://sealevel.jpl.nasa.gov/missions/jason-3/summary/) |

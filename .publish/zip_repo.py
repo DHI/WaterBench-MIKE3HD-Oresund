@@ -4,12 +4,12 @@ import os
 import zipfile
 import glob
 
-# This is the case name of the WaterBench case, e.g. "MIKE21HD-Oresund"
-case_name = ""
+# This is the case name of the WaterBench case, e.g. "MIKE3HD-Oresund"
+case_name = "MIKE3HD-Oresund"
 
-# This is the path where the zip file will be created, e.g. ".publish/MIKE21HD-Oresund-repo.zip"
+# This is the path where the zip file will be created, e.g. ".publish/MIKE3HD-Oresund-repo.zip"
 # before uploading to github the .zip file should be removed. It will only be uploaded to Zenodo.
-zip_fn = f".publish/{case_name}-repo.zip"
+zip_fn = f".publish/{case_name}.zip"
 
 
 def zip_repo():
@@ -18,7 +18,7 @@ def zip_repo():
             if (
                 not any([fn.startswith(x) for x in [".", "__", "output" + os.sep]])
                 and "__" not in fn
-                and "." in fn
+                and ("." in fn or fn == "LICENSE")
             ):
                 z.write(fn)
             else:

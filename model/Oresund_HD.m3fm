@@ -1,4 +1,4 @@
-// Created     : 2026-06-3 11:53:38
+// Created     : 2026-06-30 16:7:24
 // DLL         : C:\Program Files (x86)\DHI\MIKE Zero\2024\bin\x64\pfs2004.dll
 // Version     : 22.0.3.17314
 
@@ -916,7 +916,7 @@
                [SCALED_EDDY_VISCOSITY]
                   format = 0
                   sigma = 1.0
-                  file_name = |..\input\diffusivity\hdif_LONLAT_v2.dfs3|
+                  file_name = ||
                   item_number = 1
                   item_name = 'Diffusivity'
                EndSect  // SCALED_EDDY_VISCOSITY
@@ -1614,7 +1614,7 @@
             use_end_time = 1
             first_time_step = 0
             last_time_step = 315636
-            time_step_frequency = 6
+            time_step_frequency = 12
             number_of_points = 1
             [POINT_1]
                name = 'Point 1'
@@ -1804,7 +1804,7 @@
             use_end_time = 1
             first_time_step = 0
             last_time_step = 315636
-            time_step_frequency = 6
+            time_step_frequency = 12
             number_of_points = 1
             [POINT_1]
                name = 'Point 1'
@@ -3966,7 +3966,7 @@
                   type = 1
                   format = 0
                   constant_closure_depth = 5
-                  file_name = |closuredepth.dfs1|
+                  file_name = ||
                   item_number = 1
                EndSect  // CLOSURE_DEPTH
 

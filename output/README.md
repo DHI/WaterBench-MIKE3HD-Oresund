@@ -3,8 +3,6 @@
 
 The content of this folder is cited by:
 
-> 📝 **Template Note:** Replace the citation below with the correct author, year, title, version, and DOI.
-
-> \[DHI\]. (YEAR). *\[Case Name: Short Description\]* (Version X.X) \[Data set\]. Zenodo. https://doi.org/XXXX
+> DHI. (2026). Hydrodynamic 3D model of the Øresund: MIKE3 model setup, outputs and observation data [Data set]. Zenodo. [https://doi.org/10.5281/zenodo.20284684](https://doi.org/10.5281/zenodo.20284684)
 
 Note: You can find more information in the README.md file in the other zip files in Zenodo. Consult those zip files for background information on the data.
