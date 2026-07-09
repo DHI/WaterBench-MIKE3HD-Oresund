@@ -12,14 +12,10 @@ See the [LICENSE](LICENSE) file for usage conditions.
 
 ⚠️ Disclaimer
 
-> This model setup and dataset are provided for educational,
-> benchmarking, and research purposes only.\
-> The model configuration is simplified and may not be fully calibrated
-> or validated for operational use.\
-> Results must not be used for real-time forecasting, infrastructure
-> design, safety-critical decisions, or regulatory purposes.\
-> The dataset does not represent best-practice modelling standards at DHI and
-> should be treated as a controlled benchmark case.
+> This model is not calibrated for operational use. It is intended \
+> for educational and research purposes only, and the results must not \
+> be used for decision-making. The performance shown here does not \
+> reflect that of DHI’s high-resolution models
 
 # Intended Use
 
