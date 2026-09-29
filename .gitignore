@@ -160,6 +160,7 @@ output.zip
 
 # input files
 /input/*dfs*
+/input/**/*dfs*
 /input/init/*dfs*
 
 # PyCharm
