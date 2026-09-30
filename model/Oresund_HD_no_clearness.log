@@ -1,0 +1,1488 @@
+// Created    : 2026-09-29 15:59:16
+// Executable : C:\Program Files (x86)\DHI\MIKE Zero\2024\bin\x64\femenginehd.exe
+// Version    : 22.0.3.17314
+
+
+======================= Computing Environment ========================
+  Local machine name              : FRTP-PC1
+  Number of subdomains            : 1
+  Local subdomain id              : -1
+  Specified threads per subdomain : 4
+======================================================================
+
+
+======================================================================
+Target: FemEngineHD
+
+
+
+  Section: SYSTEM ----------------------------------------------------
+
+
+  Section: TIME ------------------------------------------------------
+      start_time : 2023 1 1 0 0 0 
+      time_step_interval : 300
+      number_of_time_steps : 2500
+
+
+  Section: DOMAIN ----------------------------------------------------
+      number_of_dimensions : 3
+      number_of_meshes : 1
+      file_name : C:\Users\frtp\Source\WaterBench-MIKE3HD-Oresund\input\mesh_EMOD.mesh
+      check_mesh : 1 (default)
+      datum_depth : 0
+      minimum_depth : 0.35
+      thresshold_depth : 0.35 (default)
+      number_of_domains : 16
+      type_of_reordering : 1
+      vertical_mesh_type_overall : 2
+      number_of_layers : 10
+      z_sigma : -10
+      vertical_mesh_type : 1
+      number_of_layers_zlevel : 30
+      vertical_mesh_type_zlevel : 1
+      constant_layer_thickness_zlevel : 1
+      type_of_bathymetry_adjustment : 2
+      minimum_layer_thickness_zlevel : 1
+
+
+    Section: MATERIAL ------------------------------------------------
+        include_material_zones : 0
+
+
+    Section: INFRASTRUCTURE ------------------------------------------
+        include_building_zones : 0
+        include_road_zones : 0
+
+
+========================== Mesh information ==========================
+  Number of elements         : 3320
+  Number of faces            : 5239
+  Number of nodes            : 1916
+  Number of sections         : 3
+  Min x-coordinate (degree)  : 12.193992
+  Max x-coordinate (degree)  : 13.062208
+  Min y-coordinate (degree)  : 55.277802
+  Max y-coordinate (degree)  : 56.13362
+  Min z-coordinate (m)       : -47.743146
+  Max z-coordinate (m)       : 0.35
+======================================================================
+
+
+======================== Boundary information ========================
+
+  number                code    number of points     number of faces
+       1                   1                 480                 478
+       2                   2                  13                  12
+       3                   3                  29                  28
+======================================================================
+
+
+========================== Mesh information ==========================
+  Number of elements         : 40500
+  Number of faces            : 108811
+  Number of nodes            : 26434
+  Number of sections         : 3
+  Min x-coordinate (degree)  : 12.193992
+  Max x-coordinate (degree)  : 13.062208
+  Min y-coordinate (degree)  : 55.277802
+  Max y-coordinate (degree)  : 56.13362
+  Min z-coordinate (m)       : -40
+  Max z-coordinate (m)       : 0.36
+======================================================================
+
+
+======================== Boundary information ========================
+
+  number                code    number of points     number of faces
+       1                   1                5454                4809
+       2                   2                 257                 212
+       3                   3                 459                 406
+======================================================================
+
+
+  Section: MODULE_SELECTION ------------------------------------------
+      mode_of_hydrodynamic_module : 2
+      hydrodynamic_features : 1
+      fluid_property : 1
+      mode_of_transport_module : 0
+      mode_of_mud_transport_module : 0
+      mode_of_sand_transport_module : 0
+      mode_of_eco_lab_module : 0
+      mode_of_particle_tracking_module : 0
+      mode_of_data_assimilation_module : 0 (default)
+
+
+  Section: HYDRODYNAMIC_MODULE ---------------------------------------
+      mode : 2
+
+
+    Section: EQUATION ------------------------------------------------
+        formulation : 4
+        time_formulation : 2 (default)
+
+
+    Section: TIME ----------------------------------------------------
+        start_time_step : 0
+        time_step_factor : 1
+
+
+    Section: FLOOD_AND_DRY -------------------------------------------
+        type : 2
+        drying_depth : 0.01
+        mass_depth : 0.1
+        wetting_depth_maximum : 0.1 (default)
+        maximum_number_of_iterations : 100 (default)
+
+
+    Section: DEPTH ---------------------------------------------------
+        type : 0
+
+
+    Section: DENSITY -------------------------------------------------
+        type : 1
+        temperature_reference : 10
+        salinity_reference : 32
+        formula : 1 (default)
+        type_of_buoyancy_calculation : 1 (default)
+
+
+    Section: EDDY_VISCOSITY ------------------------------------------
+        kinematic_viscosity_of_water : 0.000001 (default)
+
+
+      Section: HORIZONTAL_EDDY_VISCOSITY -----------------------------
+          type : 3
+
+
+        Section: SMAGORINSKY_FORMULATION -----------------------------
+            format : 0
+            constant_value : 0.28
+            minimum_eddy_viscosity : 0.000001
+            maximum_eddy_viscosity : 2.1474E+09
+
+
+      Section: VERTICAL_EDDY_VISCOSITY -------------------------------
+          type : 5
+
+
+        Section: K_EPSILON_FORMULATION -------------------------------
+            minimum_eddy_viscosity : 0.000001
+            maximum_eddy_viscosity : 0.4
+
+
+    Section: BED_RESISTANCE ------------------------------------------
+        type : 5
+
+
+      Section: ROUGHNESS ---------------------------------------------
+          format : 0
+          constant_value : 0.005
+
+
+    Section: VEGETATION ----------------------------------------------
+        type : 0
+
+
+    Section: CORIOLIS ------------------------------------------------
+        type : 2
+
+
+    Section: WIND_FORCING --------------------------------------------
+        type : 1
+        format : 3
+        file_name : C:\Users\frtp\Source\WaterBench-MIKE3HD-Oresund\input\ERA5_UVP.dfs2
+        item_number_for_pressure : 3
+        item_number_for_x_velocity : 1
+        item_number_for_y_velocity : 2
+------------------------- Data File Summary --------------------------
+  Creator: mikeio
+  File   : C:\Users\frtp\Source\WaterBench-MIKE3HD-Oresund\input\ERA5_UVP.dfs2
+  Title  : 
+
+  Start date  Start time  Sets   Interval  Unit
+  2023-01-01    00:00:00 26304       3600  second
+
+  Axis  Sets   Interval  Axis origin  Unit
+     1    11       0.25            0   meter
+     2     7       0.25            0   meter
+
+  Dynamic items:
+  Item name            Item type               Minimum    Maximum Unit
+  U10                  Wind speed           -21.195145  21.131678 meter/sec
+  V10                  Wind speed           -15.729694  18.692673 meter/sec
+  Pressure             Pressure              962.32782 1047.35559 hectopascal
+----------------------------------------------------------------------
+        neutral_pressure : 1013
+        type_of_soft_start : 2
+        soft_time_interval : 0
+
+
+      Section: WIND_FRICTION -----------------------------------------
+          type : 1
+          linear_friction_low : 0.001255
+          linear_speed_low : 7
+          linear_friction_high : 0.002425
+          linear_speed_high : 25
+
+
+    Section: ICE -----------------------------------------------------
+        type : 0
+
+
+    Section: TIDAL_POTENTIAL -----------------------------------------
+        type : 0
+
+
+    Section: PRECIPITATION_EVAPORATION -------------------------------
+        type_of_precipitation : 1
+
+
+      Section: PRECIPITATION -----------------------------------------
+          format : 3
+          soft_time_interval : 0
+          file_name : C:\Users\frtp\Source\WaterBench-MIKE3HD-Oresund\input\ERA5_PRECIPITATION.dfs2
+          item_number : 1
+------------------------- Data File Summary --------------------------
+  Creator: mikeio
+  File   : C:\Users\frtp\Source\WaterBench-MIKE3HD-Oresund\input\ERA5_PRECIPITATION.dfs2
+  Title  : 
+
+  Start date  Start time  Sets   Interval  Unit
+  2023-01-01    00:00:00 26304       3600  second
+
+  Axis  Sets   Interval  Axis origin  Unit
+     1    11       0.25            0   meter
+     2     7       0.25            0   meter
+
+  Dynamic items:
+  Item name            Item type               Minimum    Maximum Unit
+  PR                   Precipitation Rate            0 483.193115 mm/day
+----------------------------------------------------------------------
+        type_of_evaporation : 2
+
+
+    Section: INFILTRATION --------------------------------------------
+        type : 0
+
+
+    Section: RADIATION_STRESS ----------------------------------------
+        type : 0
+
+
+    Section: SOURCES -------------------------------------------------
+        number_of_sources : 0
+
+
+    Section: SOLUTION_TECHNIQUE --------------------------------------
+        additional_settings : 1 (default)
+        scheme_of_time_integration : 1
+        scheme_of_space_discretization_horizontal : 1
+        vertical_convective_term_discretization : 1 (default)
+        gradient_calculation : 3 (default)
+        gradient_limiter : 0 (default)
+        face_value_limiter : 2 (default)
+        boundary_correction : 1 (default)
+        type_of_Riemann_solver : 3
+        Riemann_factor : 1
+        type_of_face_depth : 3 (default)
+        gravity_calculation : 2 (default)
+        max_iterations_bed_resistance : 0 (default)
+        type_of_land_condition : 2 (default)
+        type_of_gate_condition : 1 (default)
+        type_of_land_condition_zlevel : 1 (default)
+        type_of_gate_condition_zlevel : 1 (default)
+        CFL_critical_HD : 0.8
+        dt_min_HD : 0.01
+        dt_max_HD : 300
+        CFL_critical_AD : 0.8
+        dt_min_AD : 0.01
+        dt_max_AD : 300
+        CFL_critical_substeps_AD : 0.8 (default)
+        error_level : 0
+        maximum_number_of_errors : 200
+
+
+    Section: STRUCTURE_MODULE ----------------------------------------
+        method : 2 (default)
+
+
+    Section: STRUCTURES ----------------------------------------------
+        check_structures : 1 (default)
+
+
+      Section: DIKES -------------------------------------------------
+          number_of_dikes : 0
+          output_of_link_data : 0
+
+
+      Section: GATES -------------------------------------------------
+          number_of_gates : 0
+          output_of_link_data : 0 (default)
+          format_of_link_data : 1 (default)
+
+
+      Section: PIERS -------------------------------------------------
+          format : 0
+          number_of_piers : 0
+
+
+      Section: TURBINES ----------------------------------------------
+          number_of_turbines : 0
+
+
+      Section: SHIP --------------------------------------------------
+
+
+    Section: INFRASTRUCTURE ------------------------------------------
+
+
+    Section: INITIAL_CONDITIONS --------------------------------------
+        type : 2
+        file_name_2d : C:\Users\frtp\Source\WaterBench-MIKE3HD-Oresund\input\init\2D_hot.dfsu
+        surface_elevation_item_no : 1
+        method_of_space_interpolation : 0 (default)
+------------------------- Data File Summary --------------------------
+  Creator: 
+  File   : C:\Users\frtp\Source\WaterBench-MIKE3HD-Oresund\input\init\2D_hot.dfsu
+  Title  : 2D_hot
+
+  Start date  Start time  Sets   Interval  Unit
+  2022-12-31    23:00:00     1        300  second
+
+  Static items:
+  Item name            Item type               Minimum    Maximum Unit
+  Node id              Grid Codes                    1       1916 Integer
+  X-coord              Latitude/longitude    12.193992  13.062208 degree
+  Y-coord              Latitude/longitude    55.277802   56.13362 degree
+  Z-coord              Item geometry 3-dime -47.743145   0.349999 meter
+  Code                 Grid Codes                    0          3 Integer
+  Element id           Grid Codes                    1       3320 Integer
+  Element type         Grid Codes                   21         21 Integer
+  No of nodes          Grid Codes                    3          3 Integer
+  Connectivity         Grid Codes                    1       1916 Integer
+
+  Dynamic items:
+  Item name            Item type               Minimum    Maximum Unit
+  Surface elevation    Surface Elevation      0.008282   0.241689 meter
+  Total water depth    Water Depth            0.010196  39.683868 meter
+  Depth averaged U vel u-velocity component  -0.204043   0.474857 meter/sec
+  Depth averaged V vel v-velocity component  -0.619872   0.211849 meter/sec
+----------------------------------------------------------------------
+
+
+    Section: BOUNDARY_CONDITIONS -------------------------------------
+        internal_land_boundary_type : 1
+
+
+      Section: CODE_1 ------------------------------------------------
+          type : 1
+
+
+      Section: CODE_2 ------------------------------------------------
+          type : 6
+          type_secondary : 1
+          format : 3
+          file_name : C:\Users\frtp\Source\WaterBench-MIKE3HD-Oresund\input\North_BND_WL.dfs1
+          item_number : 1
+          type_of_soft_start : 2
+          soft_time_interval : 0
+          reference_value : 0
+          type_of_time_interpolation : 1
+          method_of_space_interpolation : 1 (default)
+          type_of_space_interpolation : 1
+          type_of_coriolis_correction : 0
+          type_of_wind_correction : 0
+          type_of_pressure_correction : 0
+          type_of_radiation_stress_correction : 1
+------------------------- Data File Summary --------------------------
+  Creator: mikeio
+  File   : C:\Users\frtp\Source\WaterBench-MIKE3HD-Oresund\input\North_BND_WL.dfs1
+  Title  : BND1
+
+  Start date  Start time  Sets   Interval  Unit
+  2023-01-01    00:00:00 26305       3600  second
+
+  Axis  Sets   Interval  Axis origin  Unit
+     1    13 728.671204            0   meter
+
+  Static items:
+  Item name            Item type               Minimum    Maximum Unit
+  Bathymetry           Bathymetry           -27.107534  -8.734172 meter
+
+  Dynamic items:
+  Item name            Item type               Minimum    Maximum Unit
+  Surface elevation    Surface Elevation      -0.63988   1.384721 meter
+----------------------------------------------------------------------
+
+
+      Section: CODE_3 ------------------------------------------------
+          type : 6
+          type_secondary : 1
+          format : 3
+          file_name : C:\Users\frtp\Source\WaterBench-MIKE3HD-Oresund\input\South_BND_WL.dfs1
+          item_number : 1
+          type_of_soft_start : 2
+          soft_time_interval : 0
+          reference_value : 0
+          type_of_time_interpolation : 1
+          method_of_space_interpolation : 1 (default)
+          type_of_space_interpolation : 1
+          type_of_coriolis_correction : 0
+          type_of_wind_correction : 0
+          type_of_pressure_correction : 0
+          type_of_radiation_stress_correction : 1
+------------------------- Data File Summary --------------------------
+  Creator: mikeio
+  File   : C:\Users\frtp\Source\WaterBench-MIKE3HD-Oresund\input\South_BND_WL.dfs1
+  Title  : BND2
+
+  Start date  Start time  Sets   Interval  Unit
+  2023-01-01    00:00:00 26305       3600  second
+
+  Axis  Sets   Interval  Axis origin  Unit
+     1    43 690.461426            0   meter
+
+  Static items:
+  Item name            Item type               Minimum    Maximum Unit
+  Bathymetry           Bathymetry           -23.909958 1.0000E-35 meter
+
+  Dynamic items:
+  Item name            Item type               Minimum    Maximum Unit
+  Surface elevation    Surface Elevation     -1.496477   1.503872 meter
+----------------------------------------------------------------------
+
+
+    Section: TEMPERATURE_SALINITY_MODULE -----------------------------
+        temperature_mode : 2
+        salinity_mode : 2
+
+
+      Section: EQUATION ----------------------------------------------
+          minimum_temperature : -2.1
+          maximum_temperature : 40
+          minimum_salinity : 0
+          maximum_salinity : 45
+
+
+      Section: SOLUTION_TECHNIQUE ------------------------------------
+          additional_settings : 1 (default)
+          scheme_of_time_integration : 2
+          scheme_of_space_discretization_horizontal : 2
+          scheme_of_space_discretization_vertical : 3
+          gradient_calculation : 3 (default)
+          boundary_correction : 1 (default)
+          gradient_limiter : 4 (default)
+          face_value_limiter : 0 (default)
+          gradient_calculation_diffusion : 2 (default)
+          factor_diffusion : 0.8 (default)
+          horizontal_diffusion_column : 1 (default)
+          z_gradient_calculation : 1 (default)
+          factor_diffusion_vertical : 1 (default)
+          h_min : 0.01 (default)
+
+
+      Section: DIFFUSION ---------------------------------------------
+
+
+        Section: HORIZONTAL_DIFFUSION --------------------------------
+
+
+          Section: TEMPERATURE ---------------------------------------
+            type : 1
+
+
+          Section: SCALED_EDDY_VISCOSITY -----------------------------
+              format : 0
+              sigma : 1
+              minimum_diffusion : 0 (default)
+              maximum_diffusion : 1.E+10 (default)
+
+
+          Section: SALINITY ------------------------------------------
+            type : 1
+
+
+          Section: SCALED_EDDY_VISCOSITY -----------------------------
+              format : 0
+              sigma : 1
+              minimum_diffusion : 0 (default)
+              maximum_diffusion : 1.E+10 (default)
+
+
+        Section: VERTICAL_DIFFUSION ----------------------------------
+
+
+          Section: TEMPERATURE ---------------------------------------
+            type : 1
+
+
+          Section: SCALED_EDDY_VISCOSITY -----------------------------
+              format : 2
+              file_name : C:\Users\frtp\Source\WaterBench-MIKE3HD-Oresund\input\vdif_LONLAT_v1B_oresund.dfs3
+              item_number : 1
+------------------------- Data File Summary --------------------------
+  Creator: Grid editor
+  File   : C:\Users\frtp\Source\WaterBench-MIKE3HD-Oresund\input\vdif_LONLAT_v1B_oresund.dfs3
+  Title  : File Title
+
+  Start date  Start time  Sets   Interval  Unit
+  2002-01-01    00:00:00     1         30  second
+
+  Axis  Sets   Interval  Axis origin  Unit
+     1     6       0.25            0   meter
+     2     5       0.25            0   meter
+     3   101          4            0   meter
+
+  Dynamic items:
+  Item name            Item type               Minimum    Maximum Unit
+  Diffusivity          Dimensionless factor   0.009999          1 ()
+----------------------------------------------------------------------
+              minimum_diffusion : 0 (default)
+              maximum_diffusion : 1.E+10 (default)
+
+
+          Section: SALINITY ------------------------------------------
+            type : 1
+
+
+          Section: SCALED_EDDY_VISCOSITY -----------------------------
+              format : 2
+              file_name : C:\Users\frtp\Source\WaterBench-MIKE3HD-Oresund\input\vdif_LONLAT_v1B_oresund.dfs3
+              item_number : 1
+------------------------- Data File Summary --------------------------
+  Creator: Grid editor
+  File   : C:\Users\frtp\Source\WaterBench-MIKE3HD-Oresund\input\vdif_LONLAT_v1B_oresund.dfs3
+  Title  : File Title
+
+  Start date  Start time  Sets   Interval  Unit
+  2002-01-01    00:00:00     1         30  second
+
+  Axis  Sets   Interval  Axis origin  Unit
+     1     6       0.25            0   meter
+     2     5       0.25            0   meter
+     3   101          4            0   meter
+
+  Dynamic items:
+  Item name            Item type               Minimum    Maximum Unit
+  Diffusivity          Dimensionless factor   0.009999          1 ()
+----------------------------------------------------------------------
+              minimum_diffusion : 0 (default)
+              maximum_diffusion : 1.E+10 (default)
+
+
+      Section: HEAT_EXCHANGE -----------------------------------------
+          type : 1
+          type_of_latent_heat : 1
+          Daltons_law_A : 0.5
+          Daltons_law_B : 0.9
+          latent_heat_critical_wind_speed : 2
+          type_of_sensible_heat : 1
+          sensible_heat_transfer_coefficient_heating : 0.0011
+          sensible_heat_transfer_coefficient_cooling : 0.0011
+          sensible_heat_critical_wind_speed : 2
+          type_of_short_wave_radiation : 1
+          Angstroms_law_A : 0.295
+          Angstroms_law_B : 0.371
+          displacement_hours : 0
+          standard_meridian : 0
+          Beers_law_beta : 0.3
+          type_of_solar_radiation : 2
+
+
+        Section: LIGHT_EXTINCTION ------------------------------------
+            format : 0
+            constant_value : 1
+          type_of_long_wave_radiation : 1
+          long_wave_radiation_A : 0.56
+          long_wave_radiation_B : 0.077
+          long_wave_radiation_C : 0.1
+          long_wave_radiation_D : 0.9
+          type_of_ground_heat : 0
+          storage : 0
+
+
+        Section: AIR_TEMPERATURE -------------------------------------
+            format : 3
+            file_name : C:\Users\frtp\Source\WaterBench-MIKE3HD-Oresund\input\ERA5_T2.dfs2
+            item_number : 1
+------------------------- Data File Summary --------------------------
+  Creator: mikeio
+  File   : C:\Users\frtp\Source\WaterBench-MIKE3HD-Oresund\input\ERA5_T2.dfs2
+  Title  : 
+
+  Start date  Start time  Sets   Interval  Unit
+  2023-01-01    00:00:00 26304       3600  second
+
+  Axis  Sets   Interval  Axis origin  Unit
+     1    11       0.25            0   meter
+     2     7       0.25            0   meter
+
+  Dynamic items:
+  Item name            Item type               Minimum    Maximum Unit
+  2m Temperature       Temperature          -18.567047  31.263763 degree Celsius
+----------------------------------------------------------------------
+
+
+        Section: RELATIVE_HUMIDITY -----------------------------------
+            format : 3
+            file_name : C:\Users\frtp\Source\WaterBench-MIKE3HD-Oresund\input\ERA5_RH2.dfs2
+            item_number : 1
+------------------------- Data File Summary --------------------------
+  Creator: mikeio
+  File   : C:\Users\frtp\Source\WaterBench-MIKE3HD-Oresund\input\ERA5_RH2.dfs2
+  Title  : 
+
+  Start date  Start time  Sets   Interval  Unit
+  2023-01-01    00:00:00 26304       3600  second
+
+  Axis  Sets   Interval  Axis origin  Unit
+     1    11       0.25            0   meter
+     2     7       0.25            0   meter
+
+  Dynamic items:
+  Item name            Item type               Minimum    Maximum Unit
+  Relative Humidity at Relative humidity     17.378637 100.025452 percent
+----------------------------------------------------------------------
+
+
+        Section: CLEARNESS_COEFFICIENT -------------------------------
+            format : 0
+            constant_value : 70
+
+
+      Section: PRECIPITATION_EVAPORATION -----------------------------
+          type_of_precipitation : 1
+
+
+        Section: PRECIPITATION ---------------------------------------
+
+
+      Section: SOURCES -----------------------------------------------
+
+
+      Section: INITIAL_CONDITIONS ------------------------------------
+
+
+        Section: TEMPERATURE -----------------------------------------
+            type : 1
+            format : 2
+            file_name : C:\Users\frtp\Source\WaterBench-MIKE3HD-Oresund\input\init\3D_hot.dfsu
+            item_number : 6
+            method_of_space_interpolation : 0 (default)
+------------------------- Data File Summary --------------------------
+  Creator: 
+  File   : C:\Users\frtp\Source\WaterBench-MIKE3HD-Oresund\input\init\3D_hot.dfsu
+  Title  : 3d_hot
+
+  Start date  Start time  Sets   Interval  Unit
+  2022-12-31    23:00:00     1        300  second
+
+  Static items:
+  Item name            Item type               Minimum    Maximum Unit
+  Node id              Grid Codes                    1      26434 Integer
+  X-coord              Latitude/longitude    12.193992  13.062208 degree
+  Y-coord              Latitude/longitude    55.277802   56.13362 degree
+  Z-coord              Item geometry 3-dime        -40       0.36 meter
+  Code                 Grid Codes                    0          3 Integer
+  Element id           Grid Codes                    1      40500 Integer
+  Element type         Grid Codes                   32         32 Integer
+  No of nodes          Grid Codes                    6          6 Integer
+  Connectivity         Grid Codes                    1      26434 Integer
+
+  Dynamic items:
+  Item name            Item type               Minimum    Maximum Unit
+  Z coordinate         Item geometry 3-dime        -40   0.349999 meter
+  U velocity           u-velocity component  -0.282212   0.587137 meter/sec
+  V velocity           v-velocity component  -0.958214   0.276295 meter/sec
+  W velocity           w-velocity component  -0.003014   0.002826 meter/sec
+  Density              Density              1001.16741 1025.85705 kg/meter^3
+  Temperature          Temperature            3.817341  12.228247 degree Celsius
+  Salinity             Salinity               1.519281  33.839798 PSU
+----------------------------------------------------------------------
+
+
+        Section: SALINITY --------------------------------------------
+            type : 1
+            format : 2
+            file_name : C:\Users\frtp\Source\WaterBench-MIKE3HD-Oresund\input\init\3D_hot.dfsu
+            item_number : 7
+            method_of_space_interpolation : 0 (default)
+------------------------- Data File Summary --------------------------
+  Creator: 
+  File   : C:\Users\frtp\Source\WaterBench-MIKE3HD-Oresund\input\init\3D_hot.dfsu
+  Title  : 3d_hot
+
+  Start date  Start time  Sets   Interval  Unit
+  2022-12-31    23:00:00     1        300  second
+
+  Static items:
+  Item name            Item type               Minimum    Maximum Unit
+  Node id              Grid Codes                    1      26434 Integer
+  X-coord              Latitude/longitude    12.193992  13.062208 degree
+  Y-coord              Latitude/longitude    55.277802   56.13362 degree
+  Z-coord              Item geometry 3-dime        -40       0.36 meter
+  Code                 Grid Codes                    0          3 Integer
+  Element id           Grid Codes                    1      40500 Integer
+  Element type         Grid Codes                   32         32 Integer
+  No of nodes          Grid Codes                    6          6 Integer
+  Connectivity         Grid Codes                    1      26434 Integer
+
+  Dynamic items:
+  Item name            Item type               Minimum    Maximum Unit
+  Z coordinate         Item geometry 3-dime        -40   0.349999 meter
+  U velocity           u-velocity component  -0.282212   0.587137 meter/sec
+  V velocity           v-velocity component  -0.958214   0.276295 meter/sec
+  W velocity           w-velocity component  -0.003014   0.002826 meter/sec
+  Density              Density              1001.16741 1025.85705 kg/meter^3
+  Temperature          Temperature            3.817341  12.228247 degree Celsius
+  Salinity             Salinity               1.519281  33.839798 PSU
+----------------------------------------------------------------------
+
+
+      Section: BOUNDARY_CONDITIONS -----------------------------------
+
+
+        Section: CODE_1 ----------------------------------------------
+
+
+        Section: CODE_2 ----------------------------------------------
+
+
+          Section: TEMPERATURE ---------------------------------------
+              type : 2
+              format : 3
+              file_name : C:\Users\frtp\Source\WaterBench-MIKE3HD-Oresund\input\North_BND_UVTS.dfsu
+              item_number : 4
+              type_of_soft_start : 2
+              soft_time_interval : 0
+              reference_value : 0
+              type_of_time_interpolation : 1
+              method_of_space_interpolation : 0 (default)
+              type_of_space_interpolation : 1
+------------------------- Data File Summary --------------------------
+  Creator: mikeio
+  File   : C:\Users\frtp\Source\WaterBench-MIKE3HD-Oresund\input\North_BND_UVTS.dfsu
+  Title  : BND1
+
+  Start date  Start time  Sets   Interval  Unit
+  2023-01-01    00:00:00 26305       3600  second
+
+  Static items:
+  Item name            Item type               Minimum    Maximum Unit
+  Node id              Grid Codes                    1        302 Integer
+  X-coord              Latitude/longitude    12.464626   12.58906 degree
+  Y-coord              Latitude/longitude    56.097074   56.13362 degree
+  Z-coord              Item geometry 3-dime        -28          0 meter
+  Code                 Grid Codes                    0          0 Integer
+  Element id           Grid Codes                    1        259 Integer
+  Element type         Grid Codes                   25         25 Integer
+  No of nodes          Grid Codes                    4          4 Integer
+  Connectivity         Grid Codes                    1        302 Integer
+
+  Dynamic items:
+  Item name            Item type               Minimum    Maximum Unit
+  Z coordinate         Item geometry 3-dime        -28   1.383529 meter
+  U velocity           u-velocity component  -1.843663   1.321987 meter/sec
+  V velocity           v-velocity component  -1.112107   1.402668 meter/sec
+  Temperature          Temperature           -0.494693   21.30316 degree Celsius
+  Salinity             Salinity                6.85131  34.714207 PSU
+----------------------------------------------------------------------
+
+
+          Section: SALINITY ------------------------------------------
+              type : 2
+              format : 3
+              file_name : C:\Users\frtp\Source\WaterBench-MIKE3HD-Oresund\input\North_BND_UVTS.dfsu
+              item_number : 5
+              type_of_soft_start : 2
+              soft_time_interval : 0
+              reference_value : 0
+              type_of_time_interpolation : 1
+              method_of_space_interpolation : 0 (default)
+              type_of_space_interpolation : 1
+------------------------- Data File Summary --------------------------
+  Creator: mikeio
+  File   : C:\Users\frtp\Source\WaterBench-MIKE3HD-Oresund\input\North_BND_UVTS.dfsu
+  Title  : BND1
+
+  Start date  Start time  Sets   Interval  Unit
+  2023-01-01    00:00:00 26305       3600  second
+
+  Static items:
+  Item name            Item type               Minimum    Maximum Unit
+  Node id              Grid Codes                    1        302 Integer
+  X-coord              Latitude/longitude    12.464626   12.58906 degree
+  Y-coord              Latitude/longitude    56.097074   56.13362 degree
+  Z-coord              Item geometry 3-dime        -28          0 meter
+  Code                 Grid Codes                    0          0 Integer
+  Element id           Grid Codes                    1        259 Integer
+  Element type         Grid Codes                   25         25 Integer
+  No of nodes          Grid Codes                    4          4 Integer
+  Connectivity         Grid Codes                    1        302 Integer
+
+  Dynamic items:
+  Item name            Item type               Minimum    Maximum Unit
+  Z coordinate         Item geometry 3-dime        -28   1.383529 meter
+  U velocity           u-velocity component  -1.843663   1.321987 meter/sec
+  V velocity           v-velocity component  -1.112107   1.402668 meter/sec
+  Temperature          Temperature           -0.494693   21.30316 degree Celsius
+  Salinity             Salinity                6.85131  34.714207 PSU
+----------------------------------------------------------------------
+
+
+        Section: CODE_3 ----------------------------------------------
+
+
+          Section: TEMPERATURE ---------------------------------------
+              type : 2
+              format : 3
+              file_name : C:\Users\frtp\Source\WaterBench-MIKE3HD-Oresund\input\South_BND_UVTS.dfsu
+              item_number : 4
+              type_of_soft_start : 2
+              soft_time_interval : 0
+              reference_value : 0
+              type_of_time_interpolation : 1
+              method_of_space_interpolation : 0 (default)
+              type_of_space_interpolation : 1
+------------------------- Data File Summary --------------------------
+  Creator: mikeio
+  File   : C:\Users\frtp\Source\WaterBench-MIKE3HD-Oresund\input\South_BND_UVTS.dfsu
+  Title  : BND2
+
+  Start date  Start time  Sets   Interval  Unit
+  2021-01-01    00:00:00 43825       3600  second
+
+  Static items:
+  Item name            Item type               Minimum    Maximum Unit
+  Node id              Grid Codes                    1        751 Integer
+  X-coord              Latitude/longitude    12.446092  12.828255 degree
+  Y-coord              Latitude/longitude    55.278168  55.415684 degree
+  Z-coord              Item geometry 3-dime        -24          0 meter
+  Code                 Grid Codes                    0          0 Integer
+  Element id           Grid Codes                    1        679 Integer
+  Element type         Grid Codes                   25         25 Integer
+  No of nodes          Grid Codes                    4          4 Integer
+  Connectivity         Grid Codes                    1        751 Integer
+
+  Dynamic items:
+  Item name            Item type               Minimum    Maximum Unit
+  Z coordinate         Item geometry 3-dime        -24   1.512578 meter
+  U velocity           u-velocity component  -0.543925   0.540685 meter/sec
+  V velocity           v-velocity component  -1.331989   1.075256 meter/sec
+  Temperature          Temperature           -1.801604   21.73064 degree Celsius
+  Salinity             Salinity               6.194987  24.701418 PSU
+----------------------------------------------------------------------
+
+
+          Section: SALINITY ------------------------------------------
+              type : 2
+              format : 3
+              file_name : C:\Users\frtp\Source\WaterBench-MIKE3HD-Oresund\input\South_BND_UVTS.dfsu
+              item_number : 5
+              type_of_soft_start : 2
+              soft_time_interval : 0
+              reference_value : 0
+              type_of_time_interpolation : 1
+              method_of_space_interpolation : 0 (default)
+              type_of_space_interpolation : 1
+------------------------- Data File Summary --------------------------
+  Creator: mikeio
+  File   : C:\Users\frtp\Source\WaterBench-MIKE3HD-Oresund\input\South_BND_UVTS.dfsu
+  Title  : BND2
+
+  Start date  Start time  Sets   Interval  Unit
+  2021-01-01    00:00:00 43825       3600  second
+
+  Static items:
+  Item name            Item type               Minimum    Maximum Unit
+  Node id              Grid Codes                    1        751 Integer
+  X-coord              Latitude/longitude    12.446092  12.828255 degree
+  Y-coord              Latitude/longitude    55.278168  55.415684 degree
+  Z-coord              Item geometry 3-dime        -24          0 meter
+  Code                 Grid Codes                    0          0 Integer
+  Element id           Grid Codes                    1        679 Integer
+  Element type         Grid Codes                   25         25 Integer
+  No of nodes          Grid Codes                    4          4 Integer
+  Connectivity         Grid Codes                    1        751 Integer
+
+  Dynamic items:
+  Item name            Item type               Minimum    Maximum Unit
+  Z coordinate         Item geometry 3-dime        -24   1.512578 meter
+  U velocity           u-velocity component  -0.543925   0.540685 meter/sec
+  V velocity           v-velocity component  -1.331989   1.075256 meter/sec
+  Temperature          Temperature           -1.801604   21.73064 degree Celsius
+  Salinity             Salinity               6.194987  24.701418 PSU
+----------------------------------------------------------------------
+
+
+    Section: TURBULENCE_MODULE ---------------------------------------
+        mode : 2
+
+
+      Section: EQUATION ----------------------------------------------
+          model : 1
+          c1e : 1.44
+          c2e : 1.92
+          c3e : 0
+          Prandtl_number : 0.9
+          cmy : 0.09
+          surface_dissipation_parameter : 0.07
+          Ri_damping : 1
+          formulation : 2 (default)
+          type_strain_rate : 1 (default)
+          type_of_limiter : 0 (default)
+          minimum_kinetic_energy : 1.E-07
+          maximum_kinetic_energy : 2.1474E+09
+          minimum_dissipation_of_kinetic_energy : 5.E-10
+          maximum_dissipation_of_kinetic_energy : 2.1474E+09
+
+
+      Section: SOLUTION_TECHNIQUE ------------------------------------
+          additional_settings : 1 (default)
+          scheme_of_time_integration : 1
+          scheme_of_space_discretization_horizontal : 1
+          scheme_of_space_discretization_vertical : 1
+          gradient_calculation_diffusion : 2 (default)
+          factor_diffusion : 0.8 (default)
+          horizontal_diffusion_column : 1 (default)
+          z_gradient_calculation : 1 (default)
+          factor_diffusion_vertical : 1 (default)
+          h_min : 0.01 (default)
+          type_of_bed_boundary_condition : 1 (default)
+          type_of_substeps : 0 (default)
+          type_of_source : 1 (default)
+
+
+      Section: DIFFUSION ---------------------------------------------
+          sigma_k_h : 1
+          sigma_e_h : 1.3
+          sigma_k : 1
+          sigma_e : 1.3
+
+
+      Section: SOURCES -----------------------------------------------
+
+
+      Section: INITIAL_CONDITIONS ------------------------------------
+
+
+        Section: KINETIC_ENERGY --------------------------------------
+            type : 1
+            format : 0
+            constant_value : 1.E-07
+
+
+        Section: DISSIPATION_OF_KINETIC_ENERGY -----------------------
+            type : 1
+            format : 0
+            constant_value : 5.E-10
+
+
+      Section: BOUNDARY_CONDITIONS -----------------------------------
+
+
+        Section: CODE_1 ----------------------------------------------
+
+
+        Section: CODE_2 ----------------------------------------------
+
+
+          Section: KINETIC_ENERGY ------------------------------------
+              type : 2
+              format : 0
+              constant_value : 1.E-07
+              type_of_soft_start : 2
+              soft_time_interval : 0
+              reference_value : 0
+              type_of_time_interpolation : 1
+
+
+          Section: DISSIPATION_OF_KINETIC_ENERGY ---------------------
+              type : 2
+              format : 0
+              constant_value : 5.E-10
+              type_of_soft_start : 2
+              soft_time_interval : 0
+              reference_value : 0
+              type_of_time_interpolation : 1
+
+
+        Section: CODE_3 ----------------------------------------------
+
+
+          Section: KINETIC_ENERGY ------------------------------------
+              type : 2
+              format : 0
+              constant_value : 1.E-07
+              type_of_soft_start : 2
+              soft_time_interval : 0
+              reference_value : 0
+              type_of_time_interpolation : 1
+
+
+          Section: DISSIPATION_OF_KINETIC_ENERGY ---------------------
+              type : 2
+              format : 0
+              constant_value : 5.E-10
+              type_of_soft_start : 2
+              soft_time_interval : 0
+              reference_value : 0
+              type_of_time_interpolation : 1
+
+
+    Section: DECOUPLING ----------------------------------------------
+        type : 0
+
+
+    Section: OUTPUTS -------------------------------------------------
+        number_of_outputs : 5
+
+
+      Section: OUTPUT_1 ----------------------------------------------
+          include : 1
+          file_name : C:\Users\frtp\Source\WaterBench-MIKE3HD-Oresund\model\Oresund_HD_no_clearness.m3fm - Result Files\3D.dfsu
+          title : 3D
+          type : 2
+          format : 3
+          delete_value : 1.E-35 (default)
+          flood_and_dry : 2
+          precision : 2 (default)
+          use_end_time : 1
+          first_time_step : 0
+          time_step_frequency : 12
+          number_of_variables : 0 (default)
+          interpolation_type : 1
+
+
+        Section: PARAMETERS_3D ---------------------------------------
+            U_VELOCITY : 1
+            V_VELOCITY : 1
+            W_VELOCITY : 1
+            WS_VELOCITY : 0
+            HU_FLUX : 0 (default)
+            HV_FLUX : 0 (default)
+            hw_FLUX : 0 (default)
+            HWS_FLUX : 0 (default)
+            PRESSURE : 0 (default)
+            EXCESS_PRESURRE : 0 (default)
+            CURRENT_SPEED : 0
+            CURRENT_DIRECTION_HORIZONTAL : 0
+            CURRENT_DIRECTION_VERTICAL : 0
+            DENSITY : 1
+            TEMPERATURE : 1
+            SALINITY : 1
+            TURBULENT_KINETIC_ENERGY : 0
+            DISSIPATION_OF_TKE : 0
+            HORIZONTAL_EDDY_VISCOSITY : 0
+            VERTICAL_EDDY_VISCOSITY : 0
+            CFL_NUMBER : 0
+            VOLUME : 0
+            VOLUME_FACTOR : 0 (default)
+          coordinate_type : LONG/LAT
+
+
+        Section: AREA ------------------------------------------------
+            number_of_points : 4
+
+
+          Section: POINT_1 -------------------------------------------
+              x : 12.185309
+              y : 55.269243
+
+
+          Section: POINT_2 -------------------------------------------
+              x : 12.185309
+              y : 56.142178
+
+
+          Section: POINT_3 -------------------------------------------
+              x : 13.070891
+              y : 56.142178
+
+
+          Section: POINT_4 -------------------------------------------
+              x : 13.070891
+              y : 55.269243
+            layer_min : 1
+            layer_max : 40
+
+
+      Section: OUTPUT_2 ----------------------------------------------
+          include : 1
+          file_name : C:\Users\frtp\Source\WaterBench-MIKE3HD-Oresund\model\Oresund_HD_no_clearness.m3fm - Result Files\2D.dfsu
+          title : 2D
+          type : 1
+          format : 2
+          delete_value : 1.E-35 (default)
+          flood_and_dry : 2
+          precision : 2 (default)
+          use_end_time : 1
+          first_time_step : 0
+          time_step_frequency : 12
+          number_of_variables : 0 (default)
+          interpolation_type : 1
+
+
+        Section: PARAMETERS_2D ---------------------------------------
+            SURFACE_ELEVATION : 1
+            Still_water_DEPTH : 0
+            TOTAL_WATER_DEPTH : 0
+            U_VELOCITY : 1
+            V_VELOCITY : 1
+            P_FLUX : 0
+            Q_FLUX : 0
+            CURRENT_SPEED : 0
+            CURRENT_DIRECTION : 0
+            WIND_U_VELOCITY : 0
+            WIND_V_VELOCITY : 0
+            AIR_PRESSURE : 0
+            PRECIPITATION : 0
+            EVAPORATION : 0
+            BED_RESISTANCE_COEFFICIENT : 0
+            DRAG_COEFFICIENT : 0
+            BED_SHEARSTRESS : 0
+            BED_SHEARSTRESS_X_COMPONENT : 0
+            BED_SHEARSTRESS_Y_COMPONENT : 0
+            CONVERGENCE_ANGLE : 0
+            AREA : 0
+          coordinate_type : LONG/LAT
+
+
+        Section: AREA ------------------------------------------------
+            number_of_points : 4
+
+
+          Section: POINT_1 -------------------------------------------
+              x : 12.185309
+              y : 55.269243
+
+
+          Section: POINT_2 -------------------------------------------
+              x : 12.185309
+              y : 56.142178
+
+
+          Section: POINT_3 -------------------------------------------
+              x : 13.070891
+              y : 56.142178
+
+
+          Section: POINT_4 -------------------------------------------
+              x : 13.070891
+              y : 55.269243
+
+
+      Section: OUTPUT_3 ----------------------------------------------
+          include : 1
+          file_name : C:\Users\frtp\Source\WaterBench-MIKE3HD-Oresund\model\Oresund_HD_no_clearness.m3fm - Result Files\WL.dfs0
+          title : WL
+          type : 1
+          format : 0
+          delete_value : 1.E-35 (default)
+          flood_and_dry : 2
+          precision : 2 (default)
+          use_end_time : 1
+          first_time_step : 0
+          time_step_frequency : 12
+          number_of_variables : 0 (default)
+          interpolation_type : 1
+
+
+        Section: PARAMETERS_2D ---------------------------------------
+            SURFACE_ELEVATION : 1
+            Still_water_DEPTH : 0
+            TOTAL_WATER_DEPTH : 0
+            U_VELOCITY : 0
+            V_VELOCITY : 0
+            P_FLUX : 0
+            Q_FLUX : 0
+            CURRENT_SPEED : 0
+            CURRENT_DIRECTION : 0
+            WIND_U_VELOCITY : 0
+            WIND_V_VELOCITY : 0
+            AIR_PRESSURE : 0
+            PRECIPITATION : 0
+            EVAPORATION : 0
+            BED_RESISTANCE_COEFFICIENT : 0
+            DRAG_COEFFICIENT : 0
+            BED_SHEARSTRESS : 0
+            BED_SHEARSTRESS_X_COMPONENT : 0
+            BED_SHEARSTRESS_Y_COMPONENT : 0
+            CONVERGENCE_ANGLE : 0
+            AREA : 0
+          coordinate_type : LONG/LAT
+          input_format : 1
+          number_of_points : 13
+
+
+        Section: POINT_1 ---------------------------------------------
+            name : Drogden
+            x : 12.7117
+            y : 55.5358
+
+
+        Section: POINT_2 ---------------------------------------------
+            name : Klagshamn
+            x : 12.892
+            y : 55.526
+
+
+        Section: POINT_3 ---------------------------------------------
+            name : Barseback
+            x : 12.9033
+            y : 55.7564
+
+
+        Section: POINT_4 ---------------------------------------------
+            name : Dragor
+            x : 12.6833
+            y : 55.6
+
+
+        Section: POINT_5 ---------------------------------------------
+            name : Flinten7
+            x : 12.8445
+            y : 55.5894
+
+
+        Section: POINT_6 ---------------------------------------------
+            name : Helsingborg
+            x : 12.6845
+            y : 56.0412
+
+
+        Section: POINT_7 ---------------------------------------------
+            name : Hornbaek
+            x : 12.466
+            y : 56.097
+
+
+        Section: POINT_8 ---------------------------------------------
+            name : Kobenhavn
+            x : 12.65
+            y : 55.7
+
+
+        Section: POINT_9 ---------------------------------------------
+            name : Koege
+            x : 12.2
+            y : 55.45
+
+
+        Section: POINT_10 --------------------------------------------
+            name : MalmoHamn
+            x : 12.9845
+            y : 55.6257
+
+
+        Section: POINT_11 --------------------------------------------
+            name : Skanor
+            x : 12.8294
+            y : 55.4167
+
+
+        Section: POINT_12 --------------------------------------------
+            name : Vedbaek
+            x : 12.571
+            y : 55.85
+
+
+        Section: POINT_13 --------------------------------------------
+            name : NordreRose
+            x : 12.6867
+            y : 55.6361
+
+
+====================== Point Output Information ======================
+
+  Element  Domain      x (degree)      y (degree)           z (m)
+
+     2884       1     12.71469952     55.53386932    -10.60340928
+      592       1     12.88592096     55.52375249     -4.31325859
+     1495       1     12.90278115     55.75774159     -3.78672743
+      376       1     12.68222556     55.60080748     -2.60901011
+     2674       1     12.84538360     55.58868635     -8.66935344
+     1562       1     12.68478244     56.04408721     -9.18728940
+      301       1     12.46973460     56.09687488     -5.01419047
+     2247       1     12.65306919     55.70371523     -5.33115586
+       79       1     12.20259523     55.45053828     -3.03340541
+      676       1     12.98358331     55.62915963     -6.64388144
+     1166       1     12.82645095     55.41742581     -4.90138736
+      253       1     12.57348412     55.85028224     -2.85116124
+     1743       1     12.68764677     55.63710067     -6.21162120
+======================================================================
+
+
+      Section: OUTPUT_4 ----------------------------------------------
+          include : 0
+
+
+      Section: OUTPUT_5 ----------------------------------------------
+          include : 0
+
+
+======================== COMPUTATION STARTED =========================
+
+
+========================= COMPUTATION ENDED ==========================
+
+
+========================= Output Statistics ==========================
+ 
+------------------------- Data File Summary --------------------------
+  Creator: 
+  File   : C:\Users\frtp\Source\WaterBench-MIKE3HD-Oresund\model\Oresund_HD_no_clearness.m3fm - Result Files\3D.dfsu
+  Title  : 3D
+
+  Start date  Start time  Sets   Interval  Unit
+  2023-01-01    00:00:00   209       3600  second
+
+  Static items:
+  Item name            Item type               Minimum    Maximum Unit
+  Node id              Grid Codes                    1      26434 Integer
+  X-coord              Latitude/longitude    12.193992  13.062208 degree
+  Y-coord              Latitude/longitude    55.277802   56.13362 degree
+  Z-coord              Item geometry 3-dime        -40       0.36 meter
+  Code                 Grid Codes                    0          3 Integer
+  Element id           Grid Codes                    1      40500 Integer
+  Element type         Grid Codes                   32         32 Integer
+  No of nodes          Grid Codes                    6          6 Integer
+  Connectivity         Grid Codes                    1      26434 Integer
+
+  Dynamic items:
+  Item name            Item type               Minimum    Maximum Unit
+  Z coordinate         Item geometry 3-dime        -40   0.842631 meter
+  U velocity           u-velocity component  -1.571014   0.969599 meter/sec
+  V velocity           v-velocity component  -2.417976   2.136699 meter/sec
+  W velocity           w-velocity component  -0.005727   0.007017 meter/sec
+  Density              Density              1000.61908 1025.99023 kg/meter^3
+  Temperature          Temperature                -2.1  12.228247 degree Celsius
+  Salinity             Salinity               0.892609  33.955952 PSU
+----------------------------------------------------------------------
+ 
+------------------------- Data File Summary --------------------------
+  Creator: 
+  File   : C:\Users\frtp\Source\WaterBench-MIKE3HD-Oresund\model\Oresund_HD_no_clearness.m3fm - Result Files\2D.dfsu
+  Title  : 2D
+
+  Start date  Start time  Sets   Interval  Unit
+  2023-01-01    00:00:00   209       3600  second
+
+  Static items:
+  Item name            Item type               Minimum    Maximum Unit
+  Node id              Grid Codes                    1       1916 Integer
+  X-coord              Latitude/longitude    12.193992  13.062208 degree
+  Y-coord              Latitude/longitude    55.277802   56.13362 degree
+  Z-coord              Item geometry 3-dime -47.743146       0.35 meter
+  Code                 Grid Codes                    0          3 Integer
+  Element id           Grid Codes                    1       3320 Integer
+  Element type         Grid Codes                   21         21 Integer
+  No of nodes          Grid Codes                    3          3 Integer
+  Connectivity         Grid Codes                    1       1916 Integer
+
+  Dynamic items:
+  Item name            Item type               Minimum    Maximum Unit
+  Surface elevation    Surface Elevation     -0.599244   0.843127 meter
+  Depth averaged U vel u-velocity component  -1.100004   0.883129 meter/sec
+  Depth averaged V vel v-velocity component  -1.789284   1.414085 meter/sec
+----------------------------------------------------------------------
+ 
+------------------------- Data File Summary --------------------------
+  Creator: 
+  File   : C:\Users\frtp\Source\WaterBench-MIKE3HD-Oresund\model\Oresund_HD_no_clearness.m3fm - Result Files\WL.dfs0
+  Title  : WL
+
+  Start date  Start time  Sets   Interval  Unit
+  2023-01-01    00:00:00   209       3600  second
+
+  Dynamic items:
+  Item name            Item type               Minimum    Maximum Unit
+  Drogden: Surface ele Surface Elevation     -0.039552   0.784246 meter
+  Klagshamn: Surface e Surface Elevation     -0.051909   0.818254 meter
+  Barseback: Surface e Surface Elevation     -0.098039   0.704795 meter
+  Dragor: Surface elev Surface Elevation     -0.046511   0.708508 meter
+  Flinten7: Surface el Surface Elevation     -0.053641    0.74286 meter
+  Helsingborg: Surface Surface Elevation     -0.142896   0.595426 meter
+  Hornbaek: Surface el Surface Elevation     -0.547981   0.449097 meter
+  Kobenhavn: Surface e Surface Elevation     -0.171291   0.649655 meter
+  Koege: Surface eleva Surface Elevation     -0.070098   0.788724 meter
+  MalmoHamn: Surface e Surface Elevation     -0.075678   0.742901 meter
+  Skanor: Surface elev Surface Elevation      -0.03215   0.843127 meter
+  Vedbaek: Surface ele Surface Elevation     -0.173548   0.605924 meter
+  NordreRose: Surface  Surface Elevation     -0.101494   0.686021 meter
+----------------------------------------------------------------------
+ 
+======================================================================
+
+
+================= Hydrodynamic Simulation Diagnostic =================
+ 
+  Shallow water equations
+  -----------------------
+ 
+  Number of time steps        : 128630
+  Minimum time step (s)       : 2.884615
+  Maximum time step (s)       : 6.122449
+  Average time step (s)       : 5.830677
+ 
+  Transport equations
+  -----------------------
+ 
+  Number of time steps        : 5217
+  Minimum time step (s)       : 50
+  Maximum time step (s)       : 300
+  Average time step (s)       : 143.760782
+======================================================================
+
+
+========================= Simulation Timings =========================
+  ------------------------------------------------------------------
+  Task                                      CPU time    Elapsed time
+  ------------------------------------------------------------------
+  Hydrodynamic Module                       13743.88         7792.30
+    Flow calculations                        7408.48         4169.71
+      Update forcings                          89.31           69.83
+      Solve Shallow Water eq.                4105.44         2216.73
+      Other calculation                      3213.73         1883.14
+    Temperature/Salinity Module               825.14          460.16
+      Update forcings                          30.39           17.76
+      Solve Advection-Dispersion eq.          780.09          428.57
+      Other calculation                        13.45            9.90
+    Turbulence Module                        5508.97         3156.01
+      Update forcings                           0.47            7.57
+      Solve Advection-Dispersion eq.         4733.89         2663.79
+      Other calculation                       773.38          478.60
+  ------------------------------------------------------------------
+  Total                                     13743.88         7792.30
+  ------------------------------------------------------------------
+======================================================================
+
+
+========================== Overall Timings ===========================
+  ------------------------------------------------------------------
+  Task                                      CPU time    Elapsed time
+  ------------------------------------------------------------------
+  Pre-processing                                0.25            4.32
+  Calculation                               13743.92         7792.38
+  License check                                 0.58           63.25
+  Post-processing                               4.69           10.43
+  ------------------------------------------------------------------
+  Total                                     13749.47         7870.43
+  ------------------------------------------------------------------
+======================================================================
+
+
+============================ Memory Usage ============================
+  Peak memory usage (MB)                                      125.82
+======================================================================
+
+
+========================== Parallelization ===========================
+  Number of threads per subdomain : 4
+  Number of subdomains            : 1
+======================================================================
+ 
+  Number of warnings: 0
+ 
+  Normal run completion

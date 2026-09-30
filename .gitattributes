@@ -1,0 +1,2 @@
+model/**/*.dfsu filter=lfs diff=lfs merge=lfs -text
+model/**/*.dfs0 filter=lfs diff=lfs merge=lfs -text
